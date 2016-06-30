@@ -1,0 +1,27 @@
+<!--<html>
+<head>
+</head>
+<body>
+	<p id = "g"></p>
+	<script>
+
+	
+	</script>
+
+</body>
+</html>-->
+
+<html>
+	<head>
+	<script>
+		function m(e){
+			var bx = document.getElementById("box");
+			bx.style.left = e.pageX;
+			bx.style.top = e.pageY;
+		}
+	</script>
+	</head>
+	<body onmousemove="m(event)">
+		<div id="box" style="background-color:#990000; width:20px; height:20px; position:absolute;" />
+	</body>
+</html>
