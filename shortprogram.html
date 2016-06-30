@@ -12,17 +12,12 @@
 </html>-->
 
 <html>
-	<head>
+
 	<script>
-		function m(e){
-			var b = document.getElementById("c");
-			b.style.left = e.pageX;
-			b.style.top = e.pageY;
-		}
+		$('#c').append("lala");
 	</script>
-	</head>
+
 	<body onmousemove="m(event)">
-		<!--<div id="box" style="background-color:#990000; width:20px; height:20px; position:absolute;" />')"><img src="http://tobiasahlin.com/static/cursors/default.png">-->
-		<div id="c" style= "background-image: url('m.png'); width:32px; height:32px;"></div>
+		<p id="c">?</p>
 	</body>
 </html>
