@@ -14,7 +14,12 @@
 <script>
   function testSp()
   {
-    alert("hit");
+  	var x = "!"
+  	for (var i = 9; i >= 0; i--) {
+  		alert(x);
+  		x=x+"!";
+  	};
+    
   }
   window.onload=testSp;
 </script>
