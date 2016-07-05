@@ -6,7 +6,7 @@
 	<meta name="author" content="Kyle Phillips">
 	<!-- Date: 2011-01-09 -->
 	<script type="text/javascript" src="../js/toxiclibs.js"></script>
-
+  <script type="text/javascript" src="../lib/toxi.js"></script>
 	<script type="text/javascript" src="../js/processing.js"></script>
 	<link href="../css/style.css" rel="stylesheet" type="text/css" media="screen">
 </head>
@@ -52,8 +52,11 @@
 
  var  VerletPhysics2D = toxi.physics2d.VerletPhysics2D,
       VerletParticle2D = toxi.physics2d.VerletParticle2D,
+      VerletSpring2D = toxi.physics2d.VerletSpring2D,
       AttractionBehavior = toxi.physics2d.behaviors.AttractionBehavior,
+      ConstantForceBehavior = toxi.physics2d.behaviors.ConstantForceBehavior,
       GravityBehavior = toxi.physics2d.behaviors.GravityBehavior,
+      MinConstraint = toxi.physics2d.constraints.MinConstraint,
       Vec2D = toxi.geom.Vec2D,
       Rect = toxi.geom.Rect;
 
@@ -62,11 +65,14 @@
 import toxi.geom.*;
 import toxi.physics2d.*;
 import toxi.physics2d.behaviors.*;
+import toxi.physics2d.constraints.*;
 
 int NUM_PARTICLES = 250;
 
 VerletPhysics2D physics;
 AttractionBehavior mouseAttractor;
+ConstantForceBehavior constantBehave;
+MinConstraint minCons;
 
 Vec2D mousePos;
 
@@ -78,13 +84,16 @@ void setup() {
   physics.setWorldBounds(new Rect(0, 0, width, height));
   // the NEW way to add gravity to the simulation, using behaviors
   physics.addBehavior(new GravityBehavior(new Vec2D(0, 0.15)));
+  //physics.addForce((new Vec2D(0.1, 0.15)));
 }
 
 void addParticle() {
  Vec2D randLoc = Vec2D.randomVector().scale(5).addSelf(width / 2, 0);
   VerletParticle2D p = new VerletParticle2D(randLoc);
   physics.addParticle(p);
+  physics.addConstraint(new MinConstraint(X,0.01));
   // add a negative attraction force field around the new particle
+  //physics.addBehavior(new ConstantForceBehavior(new Vec2D(0.1, 0.1)));
   physics.addBehavior(new AttractionBehavior(p, 20, -1.2, 0.01));
 }
 
@@ -108,8 +117,13 @@ void mousePressed() {
   addParticle();
   mousePos = new Vec2D(mouseX, mouseY);
   // create a new positive attraction force field around the mouse position (radius=250px)
-  mouseAttractor = new AttractionBehavior(mousePos, 250, 0.9);
+  //constantBehave = new ConstantForceBehavior(new Vec2D(0, 0.5));
+  mouseAttractor = new AttractionBehavior(mousePos, 2500, 0.9);
+  minCons = new MinConstraint(Y, 0.9);
   physics.addBehavior(mouseAttractor);
+  physics.addConstraint(minCons);
+  //physics.addBehavior(constantBehave);
+  
 }
 
 void mouseDragged() {
@@ -120,6 +134,8 @@ void mouseDragged() {
 void mouseReleased() {
   // remove the mouse attraction when button has been released
   physics.removeBehavior(mouseAttractor);
+  physics.removeConstraint(minCons);
+  //physics.removeBehavior(constantBehave);
 }
 
 
