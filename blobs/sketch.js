@@ -23,7 +23,9 @@ function addNewBoob(boot, tit_1, tit_2) {
 function setup() {
   createCanvas(1100, 700);
 
-  
+  capture = createCapture(VIDEO);
+  capture.size(1280, 960);
+  //capture.hide();
 
   // Initialize the physics
   physics = new VerletPhysics2D();
@@ -172,10 +174,6 @@ function draw() {
   physics.update();
 
   background(55);
-
-  capture = createCapture(VIDEO);
-  capture.size(1280, 960);
-  capture.hide();
 
   image(capture, 0, 0, 1280, 960);
 
