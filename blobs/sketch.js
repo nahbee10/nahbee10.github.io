@@ -23,7 +23,7 @@ function setup() {
   createCanvas(1100, 700);
 
   capture = createCapture(VIDEO);
-  capture.size(1100, 700);
+  capture.size(1280, 960);
 
   // Initialize the physics
   physics = new VerletPhysics2D();
@@ -173,7 +173,7 @@ function draw() {
 
   background(55);
 
-  image(capture, 0, 0, 1100, 700);
+  //image(capture, 0, 0, 1100, 700);
 
   //attractor.display();
 
