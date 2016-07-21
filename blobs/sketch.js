@@ -14,6 +14,7 @@ var particles_tit2 = [];
 var particles_tit_tit2 = [];
 var springs = [];
 var attractor;
+var capture;
 
 function addNewBoob(boot, tit_1, tit_2) {
   
@@ -174,6 +175,7 @@ function draw() {
 
   capture = createCapture(VIDEO);
   capture.size(1280, 960);
+  capture.hide();
 
   image(capture, 0, 0, 1280, 960);
 
