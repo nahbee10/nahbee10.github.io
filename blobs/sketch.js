@@ -24,7 +24,7 @@ function setup() {
   createCanvas(1100, 700);
 
   capture = createCapture(VIDEO);
-  capture.size(960, 720);
+  capture.size(1100, 700);
   capture.hide();
 
   // Initialize the physics
@@ -168,7 +168,7 @@ function draw() {
   //randomSeed(99);
   background(55);
 
-  image(capture, 0, 0, 960, 720);
+  image(capture, 0, 0, 1100, 700);
 
 
   seconds = millis() / 1000;
