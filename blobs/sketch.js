@@ -71,7 +71,7 @@ function setup() {
     springs.push(spring1);
     physics.addSpring(spring1);
     if (i % 2 == 0) {
-      var spring2 = new VerletSpring2D(particles[i], particles[(i + 25) % particles.length], 400, 0.001);
+      var spring2 = new VerletSpring2D(particles[i], particles[(i + 12) % particles.length], 400, 0.001);
       springs.push(spring2);
       physics.addSpring(spring2);
     }
@@ -88,7 +88,7 @@ function setup() {
     springs.push(spring1);
     physics.addSpring(spring1);
     if (i % 1 == 0) {
-      var spring2 = new VerletSpring2D(particles_tit[i], particles_tit[(i + 12) % particles_tit.length], 400, 0.001);
+      var spring2 = new VerletSpring2D(particles_tit[i], particles_tit[(i + 5) % particles_tit.length], 400, 0.001);
       springs.push(spring2);
       physics.addSpring(spring2);
     }
@@ -105,7 +105,7 @@ function setup() {
     springs.push(spring1);
     physics.addSpring(spring1);
     if (i % 1 == 0) {
-      var spring2 = new VerletSpring2D(particles_tit_tit[i], particles_tit_tit[(i + 4) % particles_tit_tit.length], 400, 0.001);
+      var spring2 = new VerletSpring2D(particles_tit_tit[i], particles_tit_tit[(i + 2) % particles_tit_tit.length], 400, 0.001);
       springs.push(spring2);
       physics.addSpring(spring2);
     }
