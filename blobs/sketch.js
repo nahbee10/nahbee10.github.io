@@ -179,11 +179,7 @@ function draw() {
 
   image(capture, 0, 0, 1100, 700);
 
-  /*var positions = tracker.getCurrentPosition();
-
-  attractor = Particle(new Vec2D(positions[27][0],positions[27][0]), 100, width * 10, 0.3);
-  attractor2 = Particle(new Vec2D(positions[32][0],positions[32][0]), 100, width * 10, 0.3);*/
-
+  var positions = tracker.getCurrentPosition();
 
   seconds = millis() / 1000;
   // Update the physics world
@@ -191,8 +187,11 @@ function draw() {
 
   //attractor.display();
 
-  attractor.set((width/4),height/2);
-  attractor2.set(((width/4)*3),height/2);
+  attractor.set(positions[27][0],positions[27][0]);
+  attractor2.set(positions[32][0],positions[32][0]);
+
+  /*attractor.set((width/4),height/2);
+  attractor2.set(((width/4)*3),height/2);*/
   repeler.set(mouseX,mouseY);
 
   noStroke();
