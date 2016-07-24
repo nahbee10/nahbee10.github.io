@@ -187,11 +187,14 @@ function draw() {
 
   //attractor.display();
 
-  attractor.set(positions[27][0],positions[27][0]);
-  attractor2.set(positions[32][0],positions[32][0]);
-
-  /*attractor.set((width/4),height/2);
-  attractor2.set(((width/4)*3),height/2);*/
+  if(positions.length > 0){
+    attractor.set(positions[27][0],positions[27][1]);
+    attractor2.set(positions[32][0],positions[32][1]);
+  }else{
+    attractor.set((width/4),height/2);
+    attractor2.set(((width/4)*3),height/2);
+  }
+  
   repeler.set(mouseX,mouseY);
 
   noStroke();
