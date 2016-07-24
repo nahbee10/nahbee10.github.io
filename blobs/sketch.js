@@ -14,7 +14,10 @@ var particles_tit2 = [];
 var particles_tit_tit2 = [];
 var springs = [];
 var attractor;
+var attractor2;
 var capture;
+var tracker;
+var w = 640, h = 480;
 
 function addNewBoob(boot, tit_1, tit_2) {
   
@@ -26,6 +29,12 @@ function setup() {
   capture = createCapture(VIDEO);
   capture.size(1100, 700);
   capture.hide();
+
+  colorMode(HSB);
+
+  tracker = new clm.tracker;
+  tracker.init(pModel);
+  tracker.start(capture.elt);
 
   // Initialize the physics
   physics = new VerletPhysics2D();
@@ -169,6 +178,11 @@ function draw() {
   background(55);
 
   image(capture, 0, 0, 1100, 700);
+
+  var positions = tracker.getCurrentPosition();
+
+  attractor = Particle(new Vec2D(positions[27][0],positions[27][0]), 100, width * 10, 0.3);
+  attractor2 = Particle(new Vec2D(positions[32][0],positions[32][0]), 100, width * 10, 0.3);
 
 
   seconds = millis() / 1000;
