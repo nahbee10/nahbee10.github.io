@@ -179,10 +179,10 @@ function draw() {
 
   image(capture, 0, 0, 1100, 700);
 
-  var positions = tracker.getCurrentPosition();
+  /*var positions = tracker.getCurrentPosition();
 
   attractor = Particle(new Vec2D(positions[27][0],positions[27][0]), 100, width * 10, 0.3);
-  attractor2 = Particle(new Vec2D(positions[32][0],positions[32][0]), 100, width * 10, 0.3);
+  attractor2 = Particle(new Vec2D(positions[32][0],positions[32][0]), 100, width * 10, 0.3);*/
 
 
   seconds = millis() / 1000;
