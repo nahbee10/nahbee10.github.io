@@ -212,7 +212,8 @@ function draw() {
   }
   endShape(CLOSE);*/
 
-  fill(138,73,77,120);
+  //rgb-for-boob-fill(255,195,160);
+  fill(22,37,100);
 
   beginShape();
   for (var i = 0; i < particles_tit.length; i++) {
@@ -225,7 +226,8 @@ function draw() {
   }
   endShape(CLOSE);
 
-  fill(138,73,77);
+  //rgb-for-tit-fill(138,73,77);
+  fill(356,47,54);
 
   beginShape();
   for (var i = 0; i < particles_tit_tit.length; i++) {
@@ -250,7 +252,7 @@ function draw() {
   }
   endShape(CLOSE);*/
 
-  fill(138,73,77,120);
+  fill(22,37,100);
 
   beginShape();
   for (var i = 0; i < particles_tit2.length; i++) {
@@ -263,7 +265,8 @@ function draw() {
   }
   endShape(CLOSE);
 
-  fill(138,73,77);
+  //rgb-for-tit-fill(138,73,77);
+  fill(356,47,54);
 
   beginShape();
   for (var i = 0; i < particles_tit_tit2.length; i++) {
