@@ -112,7 +112,7 @@ function setup() {
       physics.addSpring(spring2);
     }
     if (i % 1 == 0) {
-      var spring2 = new VerletSpring2D(particles_tit_tit[i], attractor, 10, 0.01);
+      var spring2 = new VerletSpring2D(particles_tit_tit[i], attractor, 1, 0.01);
       springs.push(spring2);
       physics.addSpring(spring2);
     }
@@ -154,7 +154,7 @@ function setup() {
   }
 
   for (var i = 0; i < 16; i++) {
-    var spring1 = new VerletSpring2D(particles_tit_tit2[i], particles_tit_tit2[(i + 1) % particles_tit_tit2.length], 1, 0.1);
+    var spring1 = new VerletSpring2D(particles_tit_tit2[i], particles_tit_tit2[(i + 1) % particles_tit_tit2.length], 100, 0.1);
     springs.push(spring1);
     physics.addSpring(spring1);
     if (i % 1 == 0) {
@@ -163,7 +163,7 @@ function setup() {
       physics.addSpring(spring2);
     }
     if (i % 1 == 0) {
-      var spring2 = new VerletSpring2D(particles_tit_tit2[i], attractor2, 10, 0.01);
+      var spring2 = new VerletSpring2D(particles_tit_tit2[i], attractor2, 1, 0.01);
       springs.push(spring2);
       physics.addSpring(spring2);
     }
@@ -178,7 +178,7 @@ function draw() {
   //randomSeed(99);
   background(55);
 
-  image(capture, 0, 0, 1100, 700);
+  image(capture, 0, 0, 960, 720);
 
   var positions = tracker.getCurrentPosition();
 
