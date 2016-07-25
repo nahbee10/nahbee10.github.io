@@ -291,6 +291,7 @@ function draw() {
 
   fill(255,195,160);
   beginShape();
+  smooth();
   for (var i = 0; i < particles.length; i++) {
     //particles[i].display();
     vertex(particles[i].x, particles[i].y);
@@ -304,6 +305,7 @@ function draw() {
   fill(138,73,77,120);
 
   beginShape();
+  smooth();
   for (var i = 0; i < particles_tit.length; i++) {
     //particles[i].display();
     vertex(particles_tit[i].x, particles_tit[i].y);
@@ -317,6 +319,7 @@ function draw() {
   fill(138,73,77);
 
   beginShape();
+  smooth();
   for (var i = 0; i < particles_tit_tit.length; i++) {
     //particles[i].display();
     vertex(particles_tit_tit[i].x, particles_tit_tit[i].y);
