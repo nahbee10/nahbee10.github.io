@@ -190,8 +190,8 @@ function draw() {
   //attractor.display();
 
   if(positions.length > 0){
-    attractor.set(positions[27][0]-60,positions[27][1]);
-    attractor2.set(positions[32][0]+60,positions[32][1]);
+    attractor.set(positions[27][0]-100,positions[27][1]);
+    attractor2.set(positions[32][0]+100,positions[32][1]);
   }else{
     attractor.set((width/4),height/2);
     attractor2.set(((width/4)*3),height/2);
