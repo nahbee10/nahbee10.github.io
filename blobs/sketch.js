@@ -201,8 +201,9 @@ function draw() {
   noStroke();
 
 
-  fill(255,195,160);
-  /*beginShape();
+  //rgb-for-boob-fill(255,195,160);
+  fill(22,37,100);
+  beginShape();
   for (var i = 0; i < particles.length; i++) {
     //particles[i].display();
     vertex(particles[i].x, particles[i].y);
@@ -211,12 +212,12 @@ function draw() {
     particles[i].behavior.radius = 100 + 40 * sin(seconds + i / 30.0);
     particles[i].behavior.radiusSquared = particles[i].behavior.radius * particles[i].behavior.radius;
   }
-  endShape(CLOSE);*/
+  endShape(CLOSE);
 
   //rgb-for-boob-fill(255,195,160);
   fill(22,37,100);
 
-  beginShape();
+  /*beginShape();
   for (var i = 0; i < particles_tit.length; i++) {
     //particles[i].display();
     vertex(particles_tit[i].x, particles_tit[i].y);
@@ -225,7 +226,7 @@ function draw() {
     particles_tit[i].behavior.radius = 10 + 1 * sin(seconds + i / 30.0);
     particles_tit[i].behavior.radiusSquared = particles_tit[i].behavior.radius * particles_tit[i].behavior.radius;
   }
-  endShape(CLOSE);
+  endShape(CLOSE);*/
 
   //rgb-for-tit-fill(138,73,77);
   fill(356,47,54);
@@ -241,8 +242,9 @@ function draw() {
   }
   endShape(CLOSE);
 
-  fill(255,195,160);
-  /*beginShape();
+  //rgb-for-boob-fill(255,195,160);
+  fill(22,37,100);
+  beginShape();
   for (var i = 0; i < particles2.length; i++) {
     //particles[i].display();
     vertex(particles2[i].x, particles2[i].y);
@@ -251,11 +253,11 @@ function draw() {
     particles2[i].behavior.radius = 100 + 40 * sin(seconds + i / 30.0);
     particles2[i].behavior.radiusSquared = particles2[i].behavior.radius * particles2[i].behavior.radius;
   }
-  endShape(CLOSE);*/
+  endShape(CLOSE);
 
   fill(22,37,100);
 
-  beginShape();
+  /*beginShape();
   for (var i = 0; i < particles_tit2.length; i++) {
     //particles[i].display();
     vertex(particles_tit2[i].x, particles_tit2[i].y);
@@ -264,7 +266,7 @@ function draw() {
     particles_tit2[i].behavior.radius = 10 + 1 * sin(seconds + i / 30.0);
     particles_tit2[i].behavior.radiusSquared = particles_tit2[i].behavior.radius * particles_tit2[i].behavior.radius;
   }
-  endShape(CLOSE);
+  endShape(CLOSE);*/
 
   //rgb-for-tit-fill(138,73,77);
   fill(356,47,54);
