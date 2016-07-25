@@ -174,9 +174,11 @@ function resetBackground(){
   backgroundPixels = undefined;
 }
 
-var repelers = [];
+
 
 function draw() {
+
+  var repelers = [];
 
   //randomSeed(99);
   background(55);
