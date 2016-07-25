@@ -24,10 +24,11 @@ function addNewBoob(boot, tit_1, tit_2) {
 }
 
 function setup() {
-  createCanvas(1100, 700);
+  createCanvas(960, 720);
 
   capture = createCapture(VIDEO);
-  capture.size(1100, 700);
+  capture.size(960, 720);
+  //capture.size(1100, 700);
   capture.hide();
 
   colorMode(HSB);
@@ -46,7 +47,7 @@ function setup() {
   for (var i = 0; i < 25; i++) {
     particles_tit.push(new Particle(new Vec2D(random(width), random(height)), 4, 80, -8));
   }
-  for (var i = 0; i < 10; i++) {
+  for (var i = 0; i < 16; i++) {
     particles_tit_tit.push(new Particle(new Vec2D(random(width), random(height)), 4, 80, -8));
   }
 
@@ -56,7 +57,7 @@ function setup() {
   for (var i = 0; i < 25; i++) {
     particles_tit2.push(new Particle(new Vec2D(random(width), random(height)), 4, 80, -8));
   }
-  for (var i = 0; i < 10; i++) {
+  for (var i = 0; i < 16; i++) {
     particles_tit_tit2.push(new Particle(new Vec2D(random(width), random(height)), 4, 80, -8));
   }
 
@@ -101,17 +102,17 @@ function setup() {
 
   }
 
-  for (var i = 0; i < 10; i++) {
+  for (var i = 0; i < 16; i++) {
     var spring1 = new VerletSpring2D(particles_tit_tit[i], particles_tit_tit[(i + 1) % particles_tit_tit.length], 1, 0.1);
     springs.push(spring1);
     physics.addSpring(spring1);
     if (i % 1 == 0) {
-      var spring2 = new VerletSpring2D(particles_tit_tit[i], particles_tit_tit[(i + 4) % particles_tit_tit.length], 400, 0.001);
+      var spring2 = new VerletSpring2D(particles_tit_tit[i], particles_tit_tit[(i + 8) % particles_tit_tit.length], 400, 0.001);
       springs.push(spring2);
       physics.addSpring(spring2);
     }
     if (i % 1 == 0) {
-      var spring2 = new VerletSpring2D(particles_tit_tit[i], attractor, 1, 0.01);
+      var spring2 = new VerletSpring2D(particles_tit_tit[i], attractor, 10, 0.01);
       springs.push(spring2);
       physics.addSpring(spring2);
     }
@@ -152,17 +153,17 @@ function setup() {
 
   }
 
-  for (var i = 0; i < 10; i++) {
+  for (var i = 0; i < 16; i++) {
     var spring1 = new VerletSpring2D(particles_tit_tit2[i], particles_tit_tit2[(i + 1) % particles_tit_tit2.length], 1, 0.1);
     springs.push(spring1);
     physics.addSpring(spring1);
     if (i % 1 == 0) {
-      var spring2 = new VerletSpring2D(particles_tit_tit2[i], particles_tit_tit2[(i + 4) % particles_tit_tit2.length], 400, 0.001);
+      var spring2 = new VerletSpring2D(particles_tit_tit2[i], particles_tit_tit2[(i + 8) % particles_tit_tit2.length], 400, 0.001);
       springs.push(spring2);
       physics.addSpring(spring2);
     }
     if (i % 1 == 0) {
-      var spring2 = new VerletSpring2D(particles_tit_tit2[i], attractor2, 1, 0.01);
+      var spring2 = new VerletSpring2D(particles_tit_tit2[i], attractor2, 10, 0.01);
       springs.push(spring2);
       physics.addSpring(spring2);
     }
