@@ -25,7 +25,7 @@ function addNewBoob(boot, tit_1, tit_2) {
 
 function setup() {
 
-  var w = 960, h = 720;
+  var w = 1280, h = 960;
 
   createCanvas(w, h);
 
