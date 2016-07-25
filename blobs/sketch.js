@@ -39,9 +39,9 @@ function setup() {
   physics = new VerletPhysics2D();
   physics.setDrag(0.03);
 
-  for (var i = 0; i < 25; i++) {
+  /*for (var i = 0; i < 25; i++) {
     particles.push(new Particle(new Vec2D(random(width), random(height)), 4, 80, -1));
-  }
+  }*/
   for (var i = 0; i < 10; i++) {
     particles_tit.push(new Particle(new Vec2D(random(width), random(height)), 4, 80, -8));
   }
@@ -66,7 +66,7 @@ function setup() {
   
 
 
-  for (var i = 0; i < 25; i++) {
+  /*for (var i = 0; i < 25; i++) {
     var spring1 = new VerletSpring2D(particles[i], particles[(i + 1) % particles.length], 5, 0.01);
     springs.push(spring1);
     physics.addSpring(spring1);
@@ -81,7 +81,7 @@ function setup() {
       physics.addSpring(spring2);
     }
 
-  }
+  }*/
 
   for (var i = 0; i < 10; i++) {
     var spring1 = new VerletSpring2D(particles_tit[i], particles_tit[(i + 1) % particles_tit.length], 1, 0.01);
@@ -200,7 +200,7 @@ function draw() {
 
 
   fill(255,195,160);
-  beginShape();
+  /*beginShape();
   for (var i = 0; i < particles.length; i++) {
     //particles[i].display();
     vertex(particles[i].x, particles[i].y);
@@ -209,7 +209,7 @@ function draw() {
     particles[i].behavior.radius = 100 + 40 * sin(seconds + i / 30.0);
     particles[i].behavior.radiusSquared = particles[i].behavior.radius * particles[i].behavior.radius;
   }
-  endShape(CLOSE);
+  endShape(CLOSE);*/
 
   fill(138,73,77,120);
 
