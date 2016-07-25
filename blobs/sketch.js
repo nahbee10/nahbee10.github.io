@@ -210,6 +210,12 @@ function draw() {
           //otherwise make it fade towards black
           motionHistoryImage[iGray]--;
         }
+        var output = motionHistoryImage[iGray];
+        pixels[iRgb++] = output;
+        pixels[iRgb++] = output;
+        pixels[iRgb++] = output;
+        iRgb++; // skip alpha in rgbindex
+        iGray++; // next grayscale index
       };
     };
 
