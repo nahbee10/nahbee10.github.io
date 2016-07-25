@@ -1,0 +1,308 @@
+<html>
+<head>
+  <title>BoobBlobs</title>
+  <meta content="telephone=no" name="format-detection">
+  <meta property="og:image" content="http://nahbee10.github.io/blobs/boobblobscreenshot.png" />
+  <meta property="og:title" content="Obscene cursor's daily life" />
+  <link rel="shortcut icon" type="image/png" href="boobicon.png"/>
+  <link rel="stylesheet" href="../style.css">
+  <script language="javascript" type="text/javascript" src="libraries/p5.js"></script>
+  <script language="javascript" type="text/javascript" src="libraries/p5.dom.js"></script>
+  <script type="text/javascript" src="../paper-full.js"></script>
+  <script src="../shared/utils.js"></script>
+  <script language="javascript" type="text/javascript" src="camerawithpaperboob.js"></script>
+  <script type="text/paperscript" canvas="canvas">
+	var point = new Point(view.size.width/2-130, view.size.height/2);
+	var point2 = new Point(view.size.width/2+130, view.size.height/2);
+	var point_tit = new Point(view.size.width/2-135, view.size.height/2+10);
+	var point_tit2 = new Point(view.size.width/2+135, view.size.height/2+10);
+
+	var radius = 120;
+	var radius_tit = 40;
+	var radius_tit_tit = 10;
+
+	var boundOffset = [];
+	var boundOffsetBuff = [];
+	var sidePoints = [];
+	var boundOffset2 = [];
+	var boundOffsetBuff2 = [];
+	var sidePoints2 = [];
+	var boundOffset_tit = [];
+	var boundOffsetBuff_tit = [];
+	var sidePoints_tit = [];
+	var boundOffset_tit2 = [];
+	var boundOffsetBuff_tit2 = [];
+	var sidePoints_tit2 = [];
+	var boundOffset_tit_tit = [];
+	var boundOffsetBuff_tit_tit = [];
+	var sidePoints_tit_tit = [];
+	var boundOffset_tit_tit2 = [];
+	var boundOffsetBuff_tit_tit2 = [];
+	var sidePoints_tit_tit2 = [];
+
+	var numSegment = Math.floor(radius / 3 + 2);
+	var numSegment_tit = Math.floor(radius_tit / 1 + 0);
+
+	var path = new Path({
+		fillColor: new Color(205/255,142/255,109/255),
+
+	});
+
+	var path2 = new Path({
+		fillColor: new Color(205/255,142/255,109/255),
+
+	});
+
+	var path_tit = new Path({
+		fillColor: new Color(144/255,109/255,107/255),
+
+	});
+
+	var path_tit2 = new Path({
+		fillColor: new Color(144/255,109/255,107/255),
+
+	});
+
+	var path_tit_tit = new Path({
+		fillColor: new Color(124/255,92/255,90/255),
+
+	});
+
+	var path_tit_tit2 = new Path({
+		fillColor: new Color(124/255,92/255,90/255),
+
+	});
+
+	var mouseMPoint = new Point();
+
+	for (var i = 0; i < numSegment; i ++) {
+		boundOffset.push(radius);
+		boundOffsetBuff.push(radius);
+		boundOffset2.push(radius);
+		boundOffsetBuff2.push(radius);
+		boundOffset2.push(radius);
+		boundOffsetBuff2.push(radius);
+
+		path.add(new Point());
+		path2.add(new Point());
+		sidePoints.push(new Point({
+			angle: 360 / numSegment * i,
+			length: 1
+		}));
+		sidePoints2.push(new Point({
+			angle: 360 / numSegment * i,
+			length: 1
+		}));
+
+	}
+
+	for (var j = 0; j < numSegment_tit; j ++) {
+	    
+		boundOffset_tit.push(radius_tit);
+		boundOffsetBuff_tit.push(radius_tit);
+		boundOffset_tit2.push(radius_tit);
+		boundOffsetBuff_tit2.push(radius_tit);
+		boundOffset_tit_tit.push(radius_tit_tit);
+		boundOffsetBuff_tit_tit.push(radius_tit_tit);
+		boundOffset_tit_tit2.push(radius_tit_tit);
+		boundOffsetBuff_tit_tit2.push(radius_tit_tit);
+
+		path_tit.add(new Point());
+		path_tit2.add(new Point());
+		
+		path_tit_tit.add(new Point());
+		path_tit_tit2.add(new Point());
+
+		sidePoints_tit.push(new Point({
+			angle: 360 / numSegment_tit * j,
+			length: 1
+		}));
+		sidePoints_tit2.push(new Point({
+			angle: 360 / numSegment_tit * j,
+			length: 1
+		}));
+		sidePoints_tit_tit.push(new Point({
+			angle: 360 / numSegment_tit * j,
+			length: 1
+		}));
+		sidePoints_tit_tit2.push(new Point({
+			angle: 360 / numSegment_tit * j,
+			length: 1
+		}));
+		
+	}
+
+	function onMouseMove(event) {
+		mouseMPoint = event.point;
+	}
+
+	var minusPt = new Point(0,10);
+
+	function iterate() {
+	    
+	    //point_tit = getSidePoint(point, 40, sidePoints, boundOffset) - minusPt;
+	    //point_tit2 = getSidePoint(point2, 40, sidePoints2, boundOffset2) - minusPt;
+		updateShape(point, path, boundOffset, boundOffsetBuff, sidePoints, numSegment, radius);
+	    updateShape(point2, path2, boundOffset2, boundOffsetBuff2, sidePoints2, numSegment, radius);
+	    updateShape(point_tit, path_tit, boundOffset_tit, boundOffsetBuff_tit, sidePoints_tit, numSegment_tit, radius_tit);
+	    updateShape(point_tit2, path_tit2, boundOffset_tit2, boundOffsetBuff_tit2, sidePoints_tit2, numSegment_tit, radius_tit);
+		updateShape(point_tit, path_tit_tit, boundOffset_tit_tit, boundOffsetBuff_tit_tit, sidePoints_tit_tit, numSegment_tit, radius_tit_tit);
+	    updateShape(point_tit2, path_tit_tit2, boundOffset_tit_tit2, boundOffsetBuff_tit_tit2, sidePoints_tit_tit2, numSegment_tit, radius_tit_tit);
+		//updateShape(path2);
+		//console.log(mouseMPoint);
+	}
+
+	function updateShape(pt, pth, bOSet, bOSetBuff, sP, nS, rad){
+
+		var segments = pth.segments;
+		for (var i = 0; i < nS; i ++)
+			segments[i].point = getSidePoint(pt, i, sP, bOSet);
+
+		pth.smooth();
+		
+		//console.log(path);
+
+		for (var i = 0; i < nS; i ++) {
+			if (bOSet[i] < rad / 4)
+				bOSet[i] = rad / 4;
+			var next = (i + 1) % nS;
+			var prev = (i > 0) ? i - 1 : nS - 1;
+			var offset = bOSet[i];
+			offset += (rad - offset) / 2;
+			//offset += ((bOSet[next] + bOSet[prev]) / 2 - offset) / 150;
+			bOSetBuff[i] = bOSet[i] = offset;
+		}
+	}
+
+	function react(pt, bOSet, bOSetBuff, sP, nS, rad) {
+
+		var dist = pt.getDistance(mouseMPoint);
+		if (dist < rad && dist != 0) {
+			var overlap = rad - dist;
+			//var direc = (point - this.mouseE).normalize(overlap * 0.015);
+			//this.vector += direc;
+			//b.vector -= direc;
+
+			calcBounds(pt, mouseMPoint, bOSet, bOSetBuff, sP, nS);
+			//b.calcBounds(this);
+			updateBounds(bOSet, bOSetBuff, nS);
+			//b.updateBounds();
+		}
+	}
+
+
+	function getBoundOffset(b, bOSet) {
+		var diff = b - mouseMPoint;
+		//console.log(diff);
+		var angle = (diff.angle + 180) % 360;
+		return bOSet[Math.floor(angle / 360 * bOSet.length)];
+	}
+
+	function calcBounds(pt, b, bOSet, bOSetBuff, sP, nS) {
+		for (var i = 0; i < nS; i ++) {
+		    //console.log(tp);
+			var tp = getSidePoint(pt, i, sP, bOSet);
+			var bLen = getBoundOffset(tp, bOSet);
+			var td = tp.getDistance(b);
+			if (td < bLen) {
+				bOSetBuff[i] -= (bLen  - td) / 24;
+			}
+		}
+	}
+
+	function getSidePoint(pt, index, sP, bOSet) {
+		return pt + sP[index] * bOSet[index];
+	}
+
+	function updateBounds(bOSet, bOSetBuff, nS) {
+		for (var i = 0; i < nS; i ++)
+			bOSet[i] = bOSetBuff[i];
+	}
+
+	//--------------------- main ---------------------
+
+	function onFrame() {
+		react(point, boundOffset, boundOffsetBuff, sidePoints, numSegment, radius);
+		react(point2, boundOffset2, boundOffsetBuff2, sidePoints2, numSegment, radius);
+		react(point_tit, boundOffset_tit, boundOffsetBuff_tit, sidePoints_tit, numSegment_tit, radius_tit);
+		react(point_tit2, boundOffset_tit2, boundOffsetBuff_tit2, sidePoints_tit2, numSegment_tit, radius_tit);
+		react(point_tit, boundOffset_tit_tit, boundOffsetBuff_tit_tit, sidePoints_tit_tit, numSegment_tit, radius_tit_tit);
+		react(point_tit2, boundOffset_tit_tit2, boundOffsetBuff_tit_tit2, sidePoints_tit_tit2, numSegment_tit, radius_tit_tit);
+		iterate();
+
+	}
+    </script>
+  <style>
+/* Center the loader */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #000000;
+  border-radius: 50%;
+  border-top: 16px solid #ffffff;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 }
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom {
+  from{ bottom:-100px; opacity:0 }
+  to{ bottom:0; opacity:1 }
+}
+
+</style>
+
+</head>
+<body onload="myFunction()" style="margin:0;">
+
+<div id="loader"></div>
+
+<!--<p>Threshold <input type="range" id="thresholdAmount" value="25"></p>
+  <p><button onclick="resetBackground()">resetBackground()</button></p>-->
+
+<script>
+var myVar;
+
+function myFunction() {
+	document.getElementById("defaultCanvas0").style.display = "none";
+    myVar = setTimeout(showPage, 6000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("defaultCanvas0").style.display = "inline";
+}
+</script>
+
+</body>
+</html>
