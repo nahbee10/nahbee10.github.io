@@ -22,6 +22,29 @@
 <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/39394/Degas.min.js'></script>
 <script src="index.js"></script>
 
+
+<div id="container">
+    <video autoplay="true" id="videoElement">
+     
+    </video>
+</div>
+<script>
+var video = document.querySelector("#videoElement");
+ 
+navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
+ 
+if (navigator.getUserMedia) {       
+    navigator.getUserMedia({video: true}, handleVideo, videoError);
+}
+ 
+function handleVideo(stream) {
+    video.src = window.URL.createObjectURL(stream);
+}
+ 
+function videoError(e) {
+    // do something
+}
+</script>
     
     
     
