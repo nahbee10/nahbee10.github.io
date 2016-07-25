@@ -44,7 +44,7 @@ function setup() {
   /*for (var i = 0; i < 50; i++) {
     particles.push(new Particle(new Vec2D(random(width), random(height)), 4, 80, -1));
   }*/
-  for (var i = 0; i < 25; i++) {
+  for (var i = 0; i < 50; i++) {
     particles_tit.push(new Particle(new Vec2D(random(width), random(height)), 4, 80, -8));
   }
   for (var i = 0; i < 16; i++) {
@@ -54,7 +54,7 @@ function setup() {
   /*for (var i = 0; i < 50; i++) {
     particles2.push(new Particle(new Vec2D(random(width), random(height)), 4, 80, -1));
   }*/
-  for (var i = 0; i < 40; i++) {
+  for (var i = 0; i < 50; i++) {
     particles_tit2.push(new Particle(new Vec2D(random(width), random(height)), 4, 80, -8));
   }
   for (var i = 0; i < 16; i++) {
@@ -85,12 +85,12 @@ function setup() {
 
   }*/
 
-  for (var i = 0; i < 25; i++) {
+  for (var i = 0; i < 50; i++) {
     var spring1 = new VerletSpring2D(particles_tit[i], particles_tit[(i + 1) % particles_tit.length], 1, 0.01);
     springs.push(spring1);
     physics.addSpring(spring1);
     if (i % 1 == 0) {
-      var spring2 = new VerletSpring2D(particles_tit[i], particles_tit[(i + 12) % particles_tit.length], 400, 0.001);
+      var spring2 = new VerletSpring2D(particles_tit[i], particles_tit[(i + 25) % particles_tit.length], 400, 0.001);
       springs.push(spring2);
       physics.addSpring(spring2);
     }
@@ -136,12 +136,12 @@ function setup() {
 
   }*/
 
-  for (var i = 0; i < 40; i++) {
+  for (var i = 0; i < 50; i++) {
     var spring1 = new VerletSpring2D(particles_tit2[i], particles_tit2[(i + 1) % particles_tit2.length], 1, 0.01);
     springs.push(spring1);
     physics.addSpring(spring1);
     if (i % 1 == 0) {
-      var spring2 = new VerletSpring2D(particles_tit2[i], particles_tit2[(i + 20) % particles_tit2.length], 400, 0.001);
+      var spring2 = new VerletSpring2D(particles_tit2[i], particles_tit2[(i + 25) % particles_tit2.length], 400, 0.001);
       springs.push(spring2);
       physics.addSpring(spring2);
     }
@@ -189,8 +189,8 @@ function draw() {
   //attractor.display();
 
   if(positions.length > 0){
-    attractor.set(positions[27][0],positions[27][1]);
-    attractor2.set(positions[32][0],positions[32][1]);
+    attractor.set(positions[27][0]-25,positions[27][1]);
+    attractor2.set(positions[32][0]+25,positions[32][1]);
   }else{
     attractor.set((width/4),height/2);
     attractor2.set(((width/4)*3),height/2);
