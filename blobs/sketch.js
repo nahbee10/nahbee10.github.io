@@ -154,7 +154,7 @@ function setup() {
   }
 
   for (var i = 0; i < 16; i++) {
-    var spring1 = new VerletSpring2D(particles_tit_tit2[i], particles_tit_tit2[(i + 1) % particles_tit_tit2.length], 7, 0.1);
+    var spring1 = new VerletSpring2D(particles_tit_tit2[i], particles_tit_tit2[(i + 1) % particles_tit_tit2.length], 1, 0.01);
     springs.push(spring1);
     physics.addSpring(spring1);
     if (i % 1 == 0) {
