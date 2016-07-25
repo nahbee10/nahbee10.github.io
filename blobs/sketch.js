@@ -17,6 +17,7 @@ var attractor;
 var attractor2;
 var capture;
 var tracker;
+var w = 640, h = 480;
 
 function addNewBoob(boot, tit_1, tit_2) {
   
@@ -39,19 +40,19 @@ function setup() {
   physics = new VerletPhysics2D();
   physics.setDrag(0.03);
 
-  /*for (var i = 0; i < 25; i++) {
+  /*for (var i = 0; i < 50; i++) {
     particles.push(new Particle(new Vec2D(random(width), random(height)), 4, 80, -1));
   }*/
-  for (var i = 0; i < 10; i++) {
+  for (var i = 0; i < 25; i++) {
     particles_tit.push(new Particle(new Vec2D(random(width), random(height)), 4, 80, -8));
   }
-  for (var i = 0; i < 5; i++) {
+  for (var i = 0; i < 10; i++) {
     particles_tit_tit.push(new Particle(new Vec2D(random(width), random(height)), 4, 80, -8));
   }
 
-  for (var i = 0; i < 50; i++) {
+  /*for (var i = 0; i < 50; i++) {
     particles2.push(new Particle(new Vec2D(random(width), random(height)), 4, 80, -1));
-  }
+  }*/
   for (var i = 0; i < 25; i++) {
     particles_tit2.push(new Particle(new Vec2D(random(width), random(height)), 4, 80, -8));
   }
@@ -66,12 +67,12 @@ function setup() {
   
 
 
-  /*for (var i = 0; i < 25; i++) {
+  /*for (var i = 0; i < 50; i++) {
     var spring1 = new VerletSpring2D(particles[i], particles[(i + 1) % particles.length], 5, 0.01);
     springs.push(spring1);
     physics.addSpring(spring1);
     if (i % 2 == 0) {
-      var spring2 = new VerletSpring2D(particles[i], particles[(i + 12) % particles.length], 400, 0.001);
+      var spring2 = new VerletSpring2D(particles[i], particles[(i + 25) % particles.length], 400, 0.001);
       springs.push(spring2);
       physics.addSpring(spring2);
     }
@@ -83,12 +84,12 @@ function setup() {
 
   }*/
 
-  for (var i = 0; i < 10; i++) {
+  for (var i = 0; i < 25; i++) {
     var spring1 = new VerletSpring2D(particles_tit[i], particles_tit[(i + 1) % particles_tit.length], 1, 0.01);
     springs.push(spring1);
     physics.addSpring(spring1);
     if (i % 1 == 0) {
-      var spring2 = new VerletSpring2D(particles_tit[i], particles_tit[(i + 5) % particles_tit.length], 400, 0.001);
+      var spring2 = new VerletSpring2D(particles_tit[i], particles_tit[(i + 12) % particles_tit.length], 400, 0.001);
       springs.push(spring2);
       physics.addSpring(spring2);
     }
@@ -100,12 +101,12 @@ function setup() {
 
   }
 
-  for (var i = 0; i < 5; i++) {
+  for (var i = 0; i < 10; i++) {
     var spring1 = new VerletSpring2D(particles_tit_tit[i], particles_tit_tit[(i + 1) % particles_tit_tit.length], 1, 0.1);
     springs.push(spring1);
     physics.addSpring(spring1);
     if (i % 1 == 0) {
-      var spring2 = new VerletSpring2D(particles_tit_tit[i], particles_tit_tit[(i + 2) % particles_tit_tit.length], 400, 0.001);
+      var spring2 = new VerletSpring2D(particles_tit_tit[i], particles_tit_tit[(i + 4) % particles_tit_tit.length], 400, 0.001);
       springs.push(spring2);
       physics.addSpring(spring2);
     }
@@ -117,7 +118,7 @@ function setup() {
 
   }
 
-    for (var i = 0; i < 50; i++) {
+  /*for (var i = 0; i < 50; i++) {
     var spring1 = new VerletSpring2D(particles2[i], particles2[(i + 1) % particles2.length], 5, 0.01);
     springs.push(spring1);
     physics.addSpring(spring1);
@@ -132,7 +133,7 @@ function setup() {
       physics.addSpring(spring2);
     }
 
-  }
+  }*/
 
   for (var i = 0; i < 25; i++) {
     var spring1 = new VerletSpring2D(particles_tit2[i], particles_tit2[(i + 1) % particles_tit2.length], 1, 0.01);
@@ -193,7 +194,7 @@ function draw() {
     attractor.set((width/4),height/2);
     attractor2.set(((width/4)*3),height/2);
   }
-
+  
   repeler.set(mouseX,mouseY);
 
   noStroke();
@@ -238,7 +239,7 @@ function draw() {
   endShape(CLOSE);
 
   fill(255,195,160);
-  beginShape();
+  /*beginShape();
   for (var i = 0; i < particles2.length; i++) {
     //particles[i].display();
     vertex(particles2[i].x, particles2[i].y);
@@ -247,7 +248,7 @@ function draw() {
     particles2[i].behavior.radius = 100 + 40 * sin(seconds + i / 30.0);
     particles2[i].behavior.radiusSquared = particles2[i].behavior.radius * particles2[i].behavior.radius;
   }
-  endShape(CLOSE);
+  endShape(CLOSE);*/
 
   fill(138,73,77,120);
 
