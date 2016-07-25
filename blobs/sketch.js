@@ -248,14 +248,17 @@ function draw() {
             dx = 0, dy = 0;
           }else{
             //big changes are slow motion, small changes are fast motion
-            /*var length = Math.sqrt(dx*dx + dy*dy);
+            var length = Math.sqrt(dx*dx + dy*dy);
             var rescale = (maximumLength - length) / length;
             dx *= rescale;
-            dy *= rescale;*/
+            dy *= rescale;
             repelers[i_for_r] = new Particle(new Vec2D(x, y), 100, 50, -4);
+            repelers[i_for_r].set(x,y);
             i_for_r++;
           }
         }
+        line(x + dx, y + dy, x - arrowWidth*dy, y + arrowWidth*dx);
+        line(x + dx, y + dy, x + arrowWidth*dy, y - arrowWidth*dx);
       }
     }
   }
