@@ -44,20 +44,20 @@ function setup() {
   for (var i = 0; i < 50; i++) {
     particles.push(new Particle(new Vec2D(random(width), random(height)), 4, 80, -1));
   }
-  /*for (var i = 0; i < 50; i++) {
+  for (var i = 0; i < 25; i++) {
     particles_tit.push(new Particle(new Vec2D(random(width), random(height)), 4, 80, -8));
-  }*/
-  for (var i = 0; i < 16; i++) {
+  }
+  for (var i = 0; i < 10; i++) {
     particles_tit_tit.push(new Particle(new Vec2D(random(width), random(height)), 4, 80, -8));
   }
 
   for (var i = 0; i < 50; i++) {
     particles2.push(new Particle(new Vec2D(random(width), random(height)), 4, 80, -1));
   }
-  /*for (var i = 0; i < 50; i++) {
+  for (var i = 0; i < 25; i++) {
     particles_tit2.push(new Particle(new Vec2D(random(width), random(height)), 4, 80, -8));
-  }*/
-  for (var i = 0; i < 16; i++) {
+  }
+  for (var i = 0; i < 10; i++) {
     particles_tit_tit2.push(new Particle(new Vec2D(random(width), random(height)), 4, 80, -8));
   }
 
@@ -85,12 +85,12 @@ function setup() {
 
   }
 
-  /*for (var i = 0; i < 50; i++) {
+  for (var i = 0; i < 25; i++) {
     var spring1 = new VerletSpring2D(particles_tit[i], particles_tit[(i + 1) % particles_tit.length], 1, 0.01);
     springs.push(spring1);
     physics.addSpring(spring1);
     if (i % 1 == 0) {
-      var spring2 = new VerletSpring2D(particles_tit[i], particles_tit[(i + 25) % particles_tit.length], 400, 0.001);
+      var spring2 = new VerletSpring2D(particles_tit[i], particles_tit[(i + 12) % particles_tit.length], 400, 0.001);
       springs.push(spring2);
       physics.addSpring(spring2);
     }
@@ -100,14 +100,15 @@ function setup() {
       physics.addSpring(spring2);
     }
 
-  }*/
+  }
 
-  for (var i = 0; i < 16; i++) {
+
+  for (var i = 0; i < 10; i++) {
     var spring1 = new VerletSpring2D(particles_tit_tit[i], particles_tit_tit[(i + 1) % particles_tit_tit.length], 1, 0.1);
     springs.push(spring1);
     physics.addSpring(spring1);
     if (i % 1 == 0) {
-      var spring2 = new VerletSpring2D(particles_tit_tit[i], particles_tit_tit[(i + 8) % particles_tit_tit.length], 400, 0.001);
+      var spring2 = new VerletSpring2D(particles_tit_tit[i], particles_tit_tit[(i + 4) % particles_tit_tit.length], 400, 0.001);
       springs.push(spring2);
       physics.addSpring(spring2);
     }
@@ -136,12 +137,12 @@ function setup() {
 
   }
 
-  /*for (var i = 0; i < 50; i++) {
+  for (var i = 0; i < 25; i++) {
     var spring1 = new VerletSpring2D(particles_tit2[i], particles_tit2[(i + 1) % particles_tit2.length], 1, 0.01);
     springs.push(spring1);
     physics.addSpring(spring1);
     if (i % 1 == 0) {
-      var spring2 = new VerletSpring2D(particles_tit2[i], particles_tit2[(i + 25) % particles_tit2.length], 400, 0.001);
+      var spring2 = new VerletSpring2D(particles_tit2[i], particles_tit2[(i + 12) % particles_tit2.length], 400, 0.001);
       springs.push(spring2);
       physics.addSpring(spring2);
     }
@@ -151,14 +152,14 @@ function setup() {
       physics.addSpring(spring2);
     }
 
-  }*/
+  }
 
-  for (var i = 0; i < 16; i++) {
+  for (var i = 0; i < 10; i++) {
     var spring1 = new VerletSpring2D(particles_tit_tit2[i], particles_tit_tit2[(i + 1) % particles_tit_tit2.length], 1, 0.1);
     springs.push(spring1);
     physics.addSpring(spring1);
     if (i % 1 == 0) {
-      var spring2 = new VerletSpring2D(particles_tit_tit2[i], particles_tit_tit2[(i + 8) % particles_tit_tit2.length], 400, 0.001);
+      var spring2 = new VerletSpring2D(particles_tit_tit2[i], particles_tit_tit2[(i + 4) % particles_tit_tit2.length], 400, 0.001);
       springs.push(spring2);
       physics.addSpring(spring2);
     }
@@ -189,8 +190,8 @@ function draw() {
   //attractor.display();
 
   if(positions.length > 0){
-    attractor.set(positions[27][0]-25,positions[27][1]);
-    attractor2.set(positions[32][0]+25,positions[32][1]);
+    attractor.set(positions[27][0]-60,positions[27][1]);
+    attractor2.set(positions[32][0]+60,positions[32][1]);
   }else{
     attractor.set((width/4),height/2);
     attractor2.set(((width/4)*3),height/2);
@@ -217,7 +218,7 @@ function draw() {
   //rgb-for-boob-fill(255,195,160);
   fill(22,37,100);
 
-  /*beginShape();
+  beginShape();
   for (var i = 0; i < particles_tit.length; i++) {
     //particles[i].display();
     vertex(particles_tit[i].x, particles_tit[i].y);
@@ -226,7 +227,7 @@ function draw() {
     particles_tit[i].behavior.radius = 10 + 1 * sin(seconds + i / 30.0);
     particles_tit[i].behavior.radiusSquared = particles_tit[i].behavior.radius * particles_tit[i].behavior.radius;
   }
-  endShape(CLOSE);*/
+  endShape(CLOSE);
 
   //rgb-for-tit-fill(138,73,77);
   fill(356,47,54);
@@ -257,7 +258,7 @@ function draw() {
 
   fill(22,37,100);
 
-  /*beginShape();
+  beginShape();
   for (var i = 0; i < particles_tit2.length; i++) {
     //particles[i].display();
     vertex(particles_tit2[i].x, particles_tit2[i].y);
@@ -266,7 +267,7 @@ function draw() {
     particles_tit2[i].behavior.radius = 10 + 1 * sin(seconds + i / 30.0);
     particles_tit2[i].behavior.radiusSquared = particles_tit2[i].behavior.radius * particles_tit2[i].behavior.radius;
   }
-  endShape(CLOSE);*/
+  endShape(CLOSE);
 
   //rgb-for-tit-fill(138,73,77);
   fill(356,47,54);
