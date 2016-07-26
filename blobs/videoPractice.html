@@ -44,6 +44,7 @@
 
 			    console.log(v.width);
 			    console.log(v.height);
+
 			    var canvas = document.getElementById('c');
 			    var context = canvas.getContext('2d');
 			    //var back = document.createElement('canvas');
@@ -52,10 +53,8 @@
 
 			    var cw,ch;
 	    
-		        /*cw = v.clientWidth;
-		        ch = v.clientHeight;*/
-		        cw = v.width;
-		        ch = v.height;
+		        cw = v.clientWidth;
+		        ch = v.clientHeight;
 		        console.log(cw);
 		        console.log(ch);
 		        canvas.width = cw;
