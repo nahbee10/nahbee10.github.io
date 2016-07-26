@@ -42,19 +42,20 @@
 
 	<script>
 
-	    var v = document.getElementById('videoElement');
-	    var canvas = document.getElementById('degas');
-	    var context = canvas.getContext('2d');
+		$(window).load(function() {
 
-	    var cw = Math.floor(canvas.clientWidth / 100);
-	    var ch = Math.floor(canvas.clientHeight / 100);
+		    var v = document.getElementById('videoElement');
+		    var canvas = document.createElement('canvas');
+		    var context = canvas.getContext('2d');
 
-	    console.log(canvas.clientWidth );
-	    console.log(canvas.clientHeight);
+		    var cw = Math.floor(canvas.clientWidth / 100);
+		    var ch = Math.floor(canvas.clientHeight / 100);
 
-	    draw(v,context,500,375);
+		    console.log(canvas.clientWidth );
+		    console.log(canvas.clientHeight);
 
-
+		    draw(v,context,500,375);
+		});
 
 		function draw(v,c,w,h) {
 
