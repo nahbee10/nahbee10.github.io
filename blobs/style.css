@@ -19,13 +19,6 @@ html, body{ margin: 0; padding: 0; overflow: hidden; background: none; }
     height: 100%;
 }
 
-#d {
-	position: absolute;
-    margin: 0px auto;
-    width: 960px;
-    height: 720px;
-}
-
 #v {
     position: absolute;
     top: 50%;
