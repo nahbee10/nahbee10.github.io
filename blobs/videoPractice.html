@@ -38,8 +38,6 @@
 
 	<script>
 
-		$(window).load(function() {
-
 		    var v = document.getElementById('videoElement');
 		    var canvas = document.getElementById('c');
 		    var context = canvas.getContext('2d');
@@ -51,9 +49,8 @@
 		    console.log(canvas.clientHeight);
 
 		    context.drawImage(v,0,0,canvas.width,canvas.height);
-		});
 
-		function draw(v,c,w,h) {
+		/*function draw(v,c,w,h) {
 
 		    c.drawImage(v,0,0,w,h);
 		    // Grab the pixel data from the backing canvas
@@ -75,7 +72,7 @@
 		    c.putImageData(idata,0,0);
 		    // Start over!
 		    setTimeout(function(){ draw(v,c,w,h); }, 0);
-		}
+		}*/
 
 	</script>
 	    
