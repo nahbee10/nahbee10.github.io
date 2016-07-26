@@ -1,13 +1,15 @@
 html, body{ margin: 0; padding: 0; overflow: hidden; background: none; }
 
 #container {
-
+    margin: 0px auto;
+    width: 500px;
+    height: 375px;
+    border: 10px #333 solid;
 }
 #videoElement {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin: -180px 0 0 -240px;
+    width: 500px;
+    height: 375px;
+    background-color: #666;
 }
 #c {
     position: absolute;
@@ -19,3 +21,9 @@ html, body{ margin: 0; padding: 0; overflow: hidden; background: none; }
     height: 100%;
 }
 
+#v {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -180px 0 0 -240px;
+}
