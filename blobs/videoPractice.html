@@ -331,10 +331,12 @@
 			   World.add( engine.world, [ createConstrainteObjPts( mouse, { x: x_b, y: y_b} ) ] );
 			   //bPoints.push( new Degas.Point( x_b, y_b ) );
 			   temp = new Degas.Point( x_b, y_b );
-			   if(bPoints.length<12){
+			   if(bPoints.length>12){
+			   	 bPoints = [];
 			   	 bPoints.push( new Degas.Point( x_b, y_b ) );
 			   }else{
-			   	 bPoints[z] = temp;
+			   	 bPoints.push( new Degas.Point( x_b, y_b ) );
+			   	 //bPoints[z] = temp;
 			   	 //var which_one = bPoints.splice(z,1,temp);
 			   	 //console.log(which_one);
 			   	 //bPoints = [];
