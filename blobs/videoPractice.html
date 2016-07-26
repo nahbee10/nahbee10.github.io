@@ -188,7 +188,7 @@
 			 mainAnchor.groupId = 8;
 
 			 createBalls();
-			 createBlobs(dummyArray);
+			 
 
 			  World.add( engine.world, [ mouse, mainAnchor ] );
 
@@ -218,6 +218,8 @@
 
 			  d.addChild( p );
 			  d.addChild( b );
+
+			  createBlobs(dummyArray);
 
 			  engine.render.canvas.style.opacity = 10
 			  
