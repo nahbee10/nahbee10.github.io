@@ -278,12 +278,12 @@
 
 			 for( var i = 0; i < balles.length; i++ ){
 			   p.points[i].x = balles[i].position.x;
-			   p.points[i].y = balles[i].position.y
+			   p.points[i].y = balles[i].position.y;
 			 }
 
 			 for( var j = 0; j < blobs.length; j++ ){
 			   b.points[j].x = blobs[j].position.x;
-			   b.points[j].y = blobs[j].position.y
+			   b.points[j].y = blobs[j].position.y;
 			 }
 
 			 d.render();
@@ -306,7 +306,6 @@
 			}
 
 			function createBlobs(arr){
-				var copyArray = bPoints;
 			 for( var z = 0; z < maxSphere; z++ ){
 			 	/*if(arr.length > maxSphere){
 			 		var x_b = mainCircleRadius * arr[j].x + window.innerWidth/2;
@@ -321,6 +320,9 @@
 			   
 			   mouse = Bodies.circle(x_b, y_b, 20);
 			   mouse.groupId = 8;
+			   if(blobs.length>10){
+			   	blobs = [];
+			   }
 			   blobs.push( mouse );
 			   World.add( engine.world, [ mouse ] );
 			   World.add( engine.world, [ createConstrainteObjPts( mouse, { x: x_b, y: y_b} ) ] );
