@@ -323,12 +323,13 @@
 			   blobs.push( mouse );
 			   World.add( engine.world, [ mouse ] );
 			   World.add( engine.world, [ createConstrainteObjPts( mouse, { x: x_b, y: y_b} ) ] );
-			   bPoints.push( new Degas.Point( x_b, y_b ) );
-			   /*if(bPoints.length<maxSphere){
+			   //bPoints.push( new Degas.Point( x_b, y_b ) );
+			   if(bPoints.length<maxSphere){
 			   	 bPoints.push( new Degas.Point( x_b, y_b ) );
 			   }else{
-			   	 bPoints.splice(j,1,new Degas.Point( x_b, y_b ));
-			   }*/
+			   	 //bPoints.splice(j,1,new Degas.Point( x_b, y_b ));
+			   	 bPoints.push( new Degas.Point( x_b, y_b ) );
+			   }
 			 }
 			 
 			}
