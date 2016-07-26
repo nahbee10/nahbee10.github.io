@@ -159,6 +159,8 @@
 
 			var balles = [];
 			var blobs = [];
+
+			var dummyArray = [];
 			var maxSphere = 10;
 			var mainCircleRadius = 100;
 			var mainCircleCenter = { 'x': window.innerWidth/2, 'y': window.innerHeight/2 };
@@ -186,7 +188,7 @@
 			 mainAnchor.groupId = 8;
 
 			 createBalls();
-			 createBlobs(arr);
+			 createBlobs(dummyArray);
 
 			  World.add( engine.world, [ mouse, mainAnchor ] );
 
