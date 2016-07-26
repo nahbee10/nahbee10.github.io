@@ -187,9 +187,6 @@
 
 			 createBalls();
 
-			 createBlobs();
-
-
 			  World.add( engine.world, [ mouse, mainAnchor ] );
 
 			  // run the engine
@@ -212,7 +209,6 @@
 
 			  b = new Degas.Path( bPoints );
 			  b.stroke = baseColor;
-			  b.fill = baseColor;
 			  b.smoothPointsNumber = 20;
 			  b.closed = true;
 			  b.smooth();
@@ -236,6 +232,8 @@
 					   mousePos.x = 200;
 					   mousePos.y = 200;
 				}
+				bPoints = [];
+				createBlobs(arr);
 
 				loop(arr);
 				engine.render.canvas.style.opacity = 10
@@ -299,18 +297,23 @@
 			 }
 			}
 
-			function createBlobs(){
+			function createBlobs(arr){
 			 for( var j = 0; j < maxSphere; j++ ){
-
-			   var x = mainCircleRadius * Math.cos( Math.PI*2/maxSphere*j ) + window.innerWidth/2;
-			   var y = mainCircleRadius * Math.sin( Math.PI*2/maxSphere*j ) + window.innerHeight/2+150;
-			   mouse = Bodies.circle(x, y, 20);
+			 	if(arr.length > maxSphere){
+			 		var x_b = mainCircleRadius * arr[j].x + window.innerWidth/2;
+			   		var y_b = mainCircleRadius * arr[j].y + window.innerHeight/2+150;
+			 	}else{
+			 		var x_b = mainCircleRadius * Math.cos( Math.PI*2/maxSphere*j ) + window.innerWidth/2;
+			   		var y_b = mainCircleRadius * Math.sin( Math.PI*2/maxSphere*j ) + window.innerHeight/2+150;
+			 	}
+			   
+			   mouse = Bodies.circle(x_b, y_b, 20);
 			   mouse.groupId = 8;
 			   blobs.push( mouse );
 			   World.add( engine.world, [ mouse ] );
-			   World.add( engine.world, [ createConstrainteObjPts( mouse, { x: x, y: y} ) ] );
+			   World.add( engine.world, [ createConstrainteObjPts( mouse, { x: x_b, y: y_b} ) ] );
 
-			   bPoints.push( new Degas.Point( x, y ) );
+			   bPoints.push( new Degas.Point( x_b, y_b ) );
 			 }
 			}
 
