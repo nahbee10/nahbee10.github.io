@@ -41,7 +41,7 @@
 	</script>
 
 	<script>
-		document.addEventListener('canplay', function(){
+
 		    var v = document.getElementById('videoElement');
 		    var canvas = document.getElementById('degas');
 		    var context = canvas.getContext('2d');
@@ -54,7 +54,7 @@
 
 		    draw(v,context,cw,ch);
 
-		},false);
+
 
 		function draw(v,c,w,h) {
 		    c.drawImage(v,0,0,w,h);
