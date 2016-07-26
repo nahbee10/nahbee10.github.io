@@ -12,6 +12,7 @@ html, body{ margin: 0; padding: 0; overflow: hidden; background: none; }
     background-color: #666;
 }
 #c {
+	position: absolute;
     margin: 0px auto;
     width: 960px;
     height: 720px;
