@@ -42,23 +42,41 @@
 
 	<script>
 
-		    var v = document.getElementById('videoElement');
-		    var canvas = document.getElementById('degas');
-		    var context = canvas.getContext('2d');
+	    var v = document.getElementById('videoElement');
+	    var canvas = document.getElementById('degas');
+	    var context = canvas.getContext('2d');
 
-		    var cw = Math.floor(canvas.clientWidth / 100);
-		    var ch = Math.floor(canvas.clientHeight / 100);
+	    var cw = Math.floor(canvas.clientWidth / 100);
+	    var ch = Math.floor(canvas.clientHeight / 100);
 
-		    canvas.width = cw;
-		    canvas.height = ch;
+	    canvas.width = cw;
+	    canvas.height = ch;
 
-		    draw(v,context,cw,ch);
+	    draw(v,context,cw,ch);
 
 
 
 		function draw(v,c,w,h) {
+
 		    c.drawImage(v,0,0,w,h);
-		    setTimeout(draw,20,v,c,w,h);
+		    // Grab the pixel data from the backing canvas
+		    var idata = c.getImageData(0,0,w,h);
+		    var data = idata.data;
+		    // Loop through the pixels, turning them grayscale
+		    for(var i = 0; i < data.length; i+=4) {
+		        var r = data[i];
+		        var g = data[i+1];
+		        var b = data[i+2];
+		        var brightness = (3*r+4*g+b)>>>3;
+		        data[i] = brightness;
+		        data[i+1] = brightness;
+		        data[i+2] = brightness;
+		    }
+		    idata.data = data;
+		    // Draw the pixels onto the visible canvas
+		    c.putImageData(idata,0,0);
+		    // Start over!
+		    setTimeout(function(){ draw(v,c,w,h); }, 0);
 		}
 
 	</script>
