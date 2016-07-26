@@ -325,12 +325,10 @@
 			   World.add( engine.world, [ createConstrainteObjPts( mouse, { x: x_b, y: y_b} ) ] );
 			   //bPoints.push( new Degas.Point( x_b, y_b ) );
 			   temp = new Degas.Point( x_b, y_b );
-			   if(bPoints.length<maxSphere){
+			   if(bPoints.length<maxSphere+10){
 			   	 bPoints.push( new Degas.Point( x_b, y_b ) );
 			   }else{
-			   	 console.log(bPoints.length);
 			   	 bPoints[j] = temp;
-			   	 console.log(bPoints.length);
 			   	 //bPoints.splice(j,0,temp);
 			   	 //bPoints.push( new Degas.Point( x_b, y_b ) );
 			   }
