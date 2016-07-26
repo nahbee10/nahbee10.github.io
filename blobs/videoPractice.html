@@ -54,7 +54,7 @@
 		        back.width = cw;
 		        back.height = ch;
 		        draw(v,context,backcontext,cw,ch);
-		        back.style.display = 'none';
+
 
 			},false);
 
@@ -79,6 +79,8 @@
 			    c.putImageData(idata,0,0);
 			    // Start over!
 			    setTimeout(function(){ draw(v,c,bc,w,h); }, 0);
+
+			    bc.style.display = 'none';
 			}
 
 		/*function draw(v,c,w,h) {
