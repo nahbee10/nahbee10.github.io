@@ -306,7 +306,7 @@
 
 			function createBlobs(arr){
 				
-			 for( var j = 0; j < maxSphere; j++ ){
+			 for( var z = 0; z < maxSphere; z++ ){
 			 	/*if(arr.length > maxSphere){
 			 		var x_b = mainCircleRadius * arr[j].x + window.innerWidth/2;
 			   		var y_b = mainCircleRadius * arr[j].y + window.innerHeight/2+150;
@@ -315,8 +315,8 @@
 			   		var y_b = mainCircleRadius * Math.sin( Math.PI*2/maxSphere*j ) + window.innerHeight/2+150;
 			 	}*/
 
-		 		var x_b = mainCircleRadius * Math.cos( Math.PI*2/maxSphere*j ) + window.innerWidth/2;
-		   		var y_b = mainCircleRadius * Math.sin( Math.PI*2/maxSphere*j ) + window.innerHeight/2+150;
+		 		var x_b = mainCircleRadius * Math.cos( Math.PI*2/maxSphere*z ) + window.innerWidth/2;
+		   		var y_b = mainCircleRadius * Math.sin( Math.PI*2/maxSphere*z ) + window.innerHeight/2+150;
 			   
 			   mouse = Bodies.circle(x_b, y_b, 20);
 			   mouse.groupId = 8;
@@ -329,7 +329,7 @@
 			   	 bPoints.push( new Degas.Point( x_b, y_b ) );
 			   }else{
 			   	 //bPoints[j] = temp;
-			   	 bPoints.splice(j,1,temp);
+			   	 bPoints.splice(z,2,temp);
 			   	 //bPoints.push( new Degas.Point( x_b, y_b ) );
 			   }
 			 }
