@@ -2,23 +2,19 @@ html, body{ margin: 0; padding: 0; overflow: hidden; background: none; }
 
 #container {
     margin: 0px auto;
-    width: 500px;
-    height: 375px;
+    width: 960px;
+    height: 720px;
     border: 10px #333 solid;
 }
 #videoElement {
-    width: 500px;
-    height: 375px;
+    width: 960px;
+    height: 720px;
     background-color: #666;
 }
 #c {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
+    margin: 0px auto;
+    width: 960px;
+    height: 720px;
 }
 
 #v {
