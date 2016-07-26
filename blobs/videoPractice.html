@@ -74,6 +74,8 @@
 
 			var naheeArray = [];
 
+			console.log(naheeArray.length);
+
 			function resetBackground() {
 			  backgroundPixels = undefined;
 			}
@@ -147,9 +149,10 @@
 			    //c.putImageData(idata,0,0);
 			    // Start over!
 			    setTimeout(function(){ draw(v,c,bc,w,h); }, 0);
+			    console.log(naheeArray.length);
 			}
 
-			console.log(naheeArray.length);
+
 
 			var c, d, baseColor;
 			var pPoints = [];
