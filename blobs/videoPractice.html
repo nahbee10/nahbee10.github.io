@@ -100,11 +100,9 @@
 			          	data[i] = data[i] - backgroundPixels[i] > thresholdAmount ? 255 : 0; i++;
 			          	data[i] = data[i] - backgroundPixels[i] > thresholdAmount ? 255 : 0; i++;
 			          	i++;  // skip alpha
-			          	if(y>h/2){
-			          		if (i%50==0){
+			          	if(y>(h*3)/4){
+			          		if (i%70==0){
 				          		naheeArray.push({ 'x': x, 'y': y });
-				          		console.log(x);
-				          		console.log(y);
 			          		}
 			          	}
 			        }
