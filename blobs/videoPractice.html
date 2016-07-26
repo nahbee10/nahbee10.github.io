@@ -48,8 +48,8 @@
 		    var canvas = document.createElement('canvas');
 		    var context = canvas.getContext('2d');
 
-		    var cw = Math.floor(canvas.clientWidth / 100);
-		    var ch = Math.floor(canvas.clientHeight / 100);
+		    canvas.width = 500;
+		    canvas.height = 375;
 
 		    console.log(canvas.clientWidth );
 		    console.log(canvas.clientHeight);
