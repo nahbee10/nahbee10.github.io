@@ -12,8 +12,7 @@
 
     <canvas id="c" style="position: absolute"></canvas>
 
-
-
+    <script src='../shared/util.js'></script>
 
 	<div id="container">
 	    <video autoplay="true" id="videoElement">
@@ -61,6 +60,12 @@
 
 			},false);
 
+			var backgroundPixels;
+
+			function resetBackground() {
+			  backgroundPixels = undefined;
+			}
+
 		    function draw(v,c,bc,w,h) {
 			    // First, draw it into the backing canvas
 			    bc.drawImage(v,0,0,w,h);
@@ -68,15 +73,17 @@
 			    var idata = bc.getImageData(0,0,w,h);
 			    var data = idata.data;
 			    // Loop through the pixels, turning them grayscale
-			    for(var i = 0; i < data.length; i+=4) {
-			        var r = data[i];
-			        var g = data[i+1];
-			        var b = data[i+2];
-			        var brightness = (3*r+4*g+b)>>>3;
-			        data[i] = brightness;
-			        data[i+1] = brightness;
-			        data[i+2] = brightness;
+			    var thresholdAmount = 50 * 255. / 100.;
+			    var thresholdType = 'rgb';
+			    if(thresholdType === 'rgb') {
+			      for(var i = 0; i < data.length; i+=4) {
+				        data[i] = data[i] - backgroundPixels[i] > thresholdAmount ? 255 : 0; i++;
+			          	data[i] = data[i] - backgroundPixels[i] > thresholdAmount ? 255 : 0; i++;
+			          	data[i] = data[i] - backgroundPixels[i] > thresholdAmount ? 255 : 0; i++;
+			          	i++; // skip alpha
+			    	}
 			    }
+
 			    idata.data = data;
 			    // Draw the pixels onto the visible canvas
 			    c.putImageData(idata,0,0);
