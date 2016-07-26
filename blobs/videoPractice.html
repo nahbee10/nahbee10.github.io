@@ -249,6 +249,12 @@
 				requestAnimationFrame( loop );
 			 //mouse.position = mousePos;
 
+			 if (naheeArray.length>0){
+					mousePos.x = naheeArray[0].x;
+					mousePos.y = naheeArray[0].y;
+					//console.log(naheeArray[0]);
+				}
+
 			 Body.translate( mouse, { x: mousePos.x - mouse.positionPrev.x,  y: mousePos.y - mouse.positionPrev.y} );
 
 			 for( var i = 0; i < balles.length; i++ ){
