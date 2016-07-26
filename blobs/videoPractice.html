@@ -174,20 +174,8 @@
 			   Composite = Matter.Composite,
 			   Constraint = Matter.Constraint;
 
-			function ready(arr){
-
-				if (arr.length>0){
-					mousePos.x = arr[0].x;
-					mousePos.y = arr[0].y;
-					//console.log(arr[0]);
-				}else{
-					   mousePos.x = 200;
-					   mousePos.y = 200;
-				}
-
-			 
-
-			 engine = Engine.create(document.body, { render: { options: { wireframes: true } } });
+			$(document).ready(function(){
+			engine = Engine.create(document.body, { render: { options: { wireframes: true } } });
 			 engine.world.gravity.y = 0;
 			 resize( window.innerWidth, window.innerHeight );
 
@@ -220,15 +208,28 @@
 			  p.smooth();
 
 			  d.addChild( p );
-
-
-			  loop(arr);
-			  engine.render.canvas.style.opacity = 10
 			  
 			  $(window).resize(function(){
 			    resize( window.innerWidth, window.innerHeight );
 			    d.resize();
 			  });
+			});
+
+			function ready(arr){
+
+				if (arr.length>0){
+					mousePos.x = arr[0].x;
+					mousePos.y = arr[0].y;
+					//console.log(arr[0]);
+				}else{
+					   mousePos.x = 200;
+					   mousePos.y = 200;
+				}
+
+				loop(arr);
+				engine.render.canvas.style.opacity = 10
+
+
 			} 
 
 			function resize( width, height ){
