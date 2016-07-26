@@ -272,6 +272,8 @@
 
 			 //Body.translate( mouse, { x: mousePos.x - mouse.positionPrev.x,  y: mousePos.y - mouse.positionPrev.y} );
 
+			 createBlobs(arr);
+
 			 for( var i = 0; i < balles.length; i++ ){
 			   p.points[i].x = balles[i].position.x;
 			   p.points[i].y = balles[i].position.y
@@ -286,7 +288,7 @@
 
 			 //bPoints = [];
 				//createBlobs(arr);
-			 createBlobs(arr);
+			 
 			}
 
 			function createBalls(){
