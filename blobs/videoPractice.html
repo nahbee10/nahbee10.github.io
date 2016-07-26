@@ -47,15 +47,14 @@
 
 			    var cw,ch;
 
-			    v.addEventListener('play', function(){
-			        cw = v.clientWidth;
-			        ch = v.clientHeight;
-			        canvas.width = cw;
-			        canvas.height = ch;
-			        back.width = cw;
-			        back.height = ch;
-			        draw(v,context,backcontext,cw,ch);
-			    },false);
+			    
+		        cw = v.clientWidth;
+		        ch = v.clientHeight;
+		        canvas.width = cw;
+		        canvas.height = ch;
+		        back.width = cw;
+		        back.height = ch;
+		        draw(v,context,backcontext,cw,ch);
 
 			},false);
 
