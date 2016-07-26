@@ -188,7 +188,7 @@
 			 mainAnchor.groupId = 8;
 
 			 createBalls();
-			 createBlobs();
+			 
 
 			  World.add( engine.world, [ mouse, mainAnchor ] );
 
@@ -236,9 +236,9 @@
 					   mousePos.y = 200;
 				}
 
-				//bPoints = [];
+				bPoints = [];
 				//createBlobs(arr);
-
+				createBlobs();
 				loop(arr);
 				engine.render.canvas.style.opacity = 10
 
