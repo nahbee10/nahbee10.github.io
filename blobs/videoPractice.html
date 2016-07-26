@@ -73,15 +73,23 @@
 			    var idata = bc.getImageData(0,0,w,h);
 			    var data = idata.data;
 			    // Loop through the pixels, turning them grayscale
+
+			    if(!backgroundPixels) {
+			      backgroundPixels = copyImage(data, backgroundPixels);
+			    }
+
+			    var i = 0;
 			    var thresholdAmount = 50 * 255. / 100.;
 			    var thresholdType = 'rgb';
 			    if(thresholdType === 'rgb') {
-			      for(var i = 0; i < data.length; i+=4) {
-				        data[i] = data[i] - backgroundPixels[i] > thresholdAmount ? 255 : 0; i++;
+			      for(var y = 0; y < h; y++) {
+			        for(var x = 0; x < w; x++) {
 			          	data[i] = data[i] - backgroundPixels[i] > thresholdAmount ? 255 : 0; i++;
 			          	data[i] = data[i] - backgroundPixels[i] > thresholdAmount ? 255 : 0; i++;
-			          	i++; // skip alpha
-			    	}
+			          	data[i] = data[i] - backgroundPixels[i] > thresholdAmount ? 255 : 0; i++;
+			          	i++;  // skip alpha
+			        }
+			      }
 			    }
 
 			    idata.data = data;
