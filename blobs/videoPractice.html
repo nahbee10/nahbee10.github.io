@@ -155,8 +155,10 @@
 
 			var c, d, baseColor;
 			var pPoints = [];
+			var bPoints = [];
 
 			var balles = [];
+			var blobs = [];
 			var maxSphere = 10;
 			var mainCircleRadius = 100;
 			var mainCircleCenter = { 'x': window.innerWidth/2, 'y': window.innerHeight/2 };
@@ -175,18 +177,20 @@
 			   Constraint = Matter.Constraint;
 
 			$(document).ready(function(){
-			engine = Engine.create(document.body, { render: { options: { wireframes: true } } });
+			 engine = Engine.create(document.body, { render: { options: { wireframes: true } } });
 			 engine.world.gravity.y = 0;
 			 resize( window.innerWidth, window.innerHeight );
 
-			 mouse = Bodies.circle(window.innerWidth/2, window.innerHeight/2-150, 30);
-			 mouse.groupId = 8;
+			 
 
 			 mainAnchor = Bodies.circle(window.innerWidth/2, window.innerHeight/2, 5);
 			 mainAnchor.isStatic = true;
 			 mainAnchor.groupId = 8;
 
-			createBalls();
+			 createBalls();
+
+			 createBlobs();
+
 
 			  World.add( engine.world, [ mouse, mainAnchor ] );
 
@@ -199,6 +203,7 @@
 			  c.height = window.innerHeight;
 
 			  d = new Degas( c );
+
 			  baseColor = "#f2f2f2";
 			  p = new Degas.Path( pPoints );
 			  p.stroke = baseColor;
@@ -207,7 +212,15 @@
 			  p.closed = true;
 			  p.smooth();
 
+			  b = new Degas.Path( bPoints );
+			  b.stroke = baseColor;
+			  b.fill = baseColor;
+			  b.smoothPointsNumber = 20;
+			  b.closed = true;
+			  b.smooth();
+
 			  d.addChild( p );
+			  d.addChild( b );
 			  
 			  $(window).resize(function(){
 			    resize( window.innerWidth, window.innerHeight );
@@ -260,11 +273,16 @@
 					//console.log(naheeArray[0]);
 				}
 
-			 Body.translate( mouse, { x: mousePos.x - mouse.positionPrev.x,  y: mousePos.y - mouse.positionPrev.y} );
+			 //Body.translate( mouse, { x: mousePos.x - mouse.positionPrev.x,  y: mousePos.y - mouse.positionPrev.y} );
 
 			 for( var i = 0; i < balles.length; i++ ){
 			   p.points[i].x = balles[i].position.x;
 			   p.points[i].y = balles[i].position.y
+			 }
+
+			 for( var j = 0; j < blobs.length; j++ ){
+			   b.points[j].x = blobs[j].position.x;
+			   b.points[j].y = blobs[j].position.y
 			 }
 
 			 d.render();
@@ -275,9 +293,24 @@
 			   var x = mainCircleRadius * Math.cos( Math.PI*2/maxSphere*i ) + window.innerWidth/2;
 			   var y = mainCircleRadius * Math.sin( Math.PI*2/maxSphere*i ) + window.innerHeight/2;
 			   var b = Bodies.circle( x, y, 20 );
-			   balles.push( b ) 
+			   balles.push( b );
 			   World.add( engine.world, [ b ] );
 			   World.add( engine.world, [ createConstrainteObjPts( b, { x: x, y: y} ) ] );
+
+			   pPoints.push( new Degas.Point( x, y ) );
+			 }
+			}
+
+			function createBlobs(){
+			 for( var i = 0; i < maxSphere; i++ ){
+
+			   var x = mainCircleRadius * Math.cos( Math.PI*2/maxSphere*i ) + window.innerWidth/2;
+			   var y = mainCircleRadius * Math.sin( Math.PI*2/maxSphere*i ) + window.innerHeight/2-150;
+			   mouse = Bodies.circle(window.innerWidth/2, window.innerHeight/2-150, 20);
+			   mouse.groupId = 8;
+			   blobs.push( mouse );
+			   World.add( engine.world, [ mouse ] );
+			   World.add( engine.world, [ createConstrainteObjPts( mouse, { x: x, y: y} ) ] );
 
 			   pPoints.push( new Degas.Point( x, y ) );
 			 }
