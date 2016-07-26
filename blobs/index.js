@@ -46,7 +46,7 @@ createBalls();
   Engine.run(engine); 
 
 
-  c = $('#c')[0]; 
+  c = $('#d')[0]; 
   c.width = window.innerWidth;
   c.height = window.innerHeight;
 
