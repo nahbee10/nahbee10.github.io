@@ -80,7 +80,7 @@
 
 			    var i = 0;
 			    var thresholdAmount = 50 * 255. / 100.;
-			    var thresholdType = 'nh';
+			    var thresholdType = 'rgb';
 			    if(thresholdType === 'rgb') {
 			      for(var y = 0; y < h; y++) {
 			        for(var x = 0; x < w; x++) {
@@ -127,7 +127,7 @@
 
 			    idata.data = data;
 			    // Draw the pixels onto the visible canvas
-			    //c.putImageData(idata,0,0);
+			    c.putImageData(idata,0,0);
 			    // Start over!
 			    setTimeout(function(){ draw(v,c,bc,w,h); }, 0);
 			}
