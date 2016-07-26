@@ -102,6 +102,8 @@
 			          	i++;  // skip alpha
 			          	if (i%50==0){
 			          		naheeArray.push({ 'x': x, 'y': y });
+			          		console.log(x);
+			          		console.log(y);
 			          	}
 			        }
 			      }
@@ -173,6 +175,7 @@
 				if (naheeArray.length>0){
 					mousePos.x = naheeArray[0].x;
 					mousePos.y = naheeArray[0].y;
+					console.log(naheeArray[0]);
 				}else{
 					$(window).bind('mousemove', function(e){ 
 					   mousePos.x = e.pageX;
