@@ -300,15 +300,15 @@ function draw() {
             i_for_r++;
           }
         }
-        line(x + dx, y + dy, x - arrowWidth*dy, y + arrowWidth*dx);
-        line(x + dx, y + dy, x + arrowWidth*dy, y - arrowWidth*dx);
+        //line(x + dx, y + dy, x - arrowWidth*dy, y + arrowWidth*dx);
+        //line(x + dx, y + dy, x + arrowWidth*dy, y - arrowWidth*dx);
       }
     }
   }
 
   ////////////////
 
-  frameRate(30);
+  //frameRate(30);
 
   seconds = millis() / 1000;
   // Update the physics world
