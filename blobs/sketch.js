@@ -327,6 +327,8 @@ function draw() {
      particles[i].behavior.radiusSquared = particles[i].behavior.radius * particles[i].behavior.radius;
    }
 
+  p.smooth();
+
 
   d.render();
 
