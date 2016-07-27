@@ -70,8 +70,8 @@ function setup() {
   console.log("hi-9");
 
   for (var i = 0; i < 20; i++) {
-    var x = mainCircleRadius * Math.cos( Math.PI*2/20*i ) + width/2-200;
-    var y = mainCircleRadius * Math.sin( Math.PI*2/20*i ) + height/2-200;
+    var x = mainCircleRadius * Math.cos( Math.PI*2/20*i );
+    var y = mainCircleRadius * Math.sin( Math.PI*2/20*i );
     particles.push(new Particle(new Vec2D(x, y), 4, 80, -8));
     pPoints.push( new Degas.Point( x, y ) );
   }
