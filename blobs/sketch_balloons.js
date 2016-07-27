@@ -50,7 +50,7 @@ function setup() {
   p.smoothPointsNumber = 20;
   p.closed = true;
 
-  p2 = new Degas.Path( pPoints );
+  p2 = new Degas.Path( pPoints2 );
   p2.stroke = baseColor;
   p2.fill = baseColor;
   p2.smoothPointsNumber = 20;
