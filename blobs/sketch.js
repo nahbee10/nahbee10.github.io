@@ -25,9 +25,11 @@ var mainCircleRadius = 100;
   var pPoints = [];
   var bPoints = [];
 
-function addNewBoob(boot, tit_1, tit_2) {
-  
-}
+  c = $('#defaultCanvas0')[0]; 
+  c.width = w;
+  c.height = h;
+
+
 
 function setup() {
 
@@ -45,9 +47,7 @@ function setup() {
 
   console.log("hi-1");
 
-  c = $('#defaultCanvas0')[0]; 
-  c.width = w;
-  c.height = h;
+ 
 
   console.log("hi-2");
 
