@@ -180,6 +180,14 @@
 			   Constraint = Matter.Constraint;
 
 			$(document).ready(function(){
+
+				 $(window).bind('mousemove', function(e){ 
+				   mousePos.x = e.pageX;
+				   mousePos.y = e.pageY;
+				 })
+
+				mouse = Bodies.circle(window.innerWidth/2, window.innerHeight/2-150, 30);
+ 				mouse.groupId = 8;
 			 engine = Engine.create(document.body, { render: { options: { wireframes: true } } });
 			 engine.world.gravity.y = 0;
 			 resize( window.innerWidth, window.innerHeight );
@@ -189,11 +197,9 @@
 			 mainAnchor.groupId = 8;
 
 			 createBalls();
-			 createBlobs(dummyArray);
-			 
+			 createBlobs(arr);
 
-			  World.add( engine.world, [ mainAnchor ] );
-			  //World.add( engine.world, [ mouse, mainAnchor ] );
+			  World.add( engine.world, [ mouse, mainAnchor ] );
 
 			  // run the engine
 			  Engine.run(engine); 
@@ -239,8 +245,6 @@
 					   mousePos.y = 200;
 				}
 
-				
-
 				loop(arr);
 
 				engine.render.canvas.style.opacity = 10;
@@ -266,18 +270,8 @@
 				requestAnimationFrame( loop );
 			 //mouse.position = mousePos;
 
-			 if (arr.length>0){
-					/*mousePos.x = arr[0].x;
-					mousePos.y = arr[0].y;*/
-					mousePos.x = 360;
-					mousePos.y = 360;
-					//console.log(naheeArray[0]);
-				}
-
-			 //Body.translate( mouse, { x: mousePos.x - mouse.positionPrev.x,  y: mousePos.y - mouse.positionPrev.y} );
-
-			 
-
+			 Body.translate( mouse, { x: mousePos.x - mouse.positionPrev.x,  y: mousePos.y - mouse.positionPrev.y} );
+		
 			 for( var i = 0; i < balles.length; i++ ){
 			   p.points[i].x = balles[i].position.x;
 			   p.points[i].y = balles[i].position.y;
@@ -289,9 +283,7 @@
 			 }
 
 			 d.render();
-			 
-			 createBlobs(arr);
-			 
+
 			}
 
 			function createBalls(){
@@ -310,46 +302,19 @@
 			function createBlobs(arr){
 
 			 for( var z = 0; z < maxSphere; z++ ){
-			 	/*if(arr.length > maxSphere){
-			 		var x_b = mainCircleRadius * arr[j].x + window.innerWidth/2;
-			   		var y_b = mainCircleRadius * arr[j].y + window.innerHeight/2+150;
-			 	}else{
-			 		var x_b = mainCircleRadius * Math.cos( Math.PI*2/maxSphere*j ) + window.innerWidth/2;
-			   		var y_b = mainCircleRadius * Math.sin( Math.PI*2/maxSphere*j ) + window.innerHeight/2+150;
-			 	}*/
 
-		 		var x_b = mainCircleRadius * Math.cos( Math.PI*2/maxSphere*z ) + window.innerWidth/2;
-		   		var y_b = mainCircleRadius * Math.sin( Math.PI*2/maxSphere*z ) + window.innerHeight/2+150;
-			   
+		 		var x_b = mainCircleRadius * Math.cos( Math.PI*2/maxSphere*z ) + mousePos.x;
+		   		var y_b = mainCircleRadius * Math.sin( Math.PI*2/maxSphere*z ) + mousePos.y;
 
 			   	var bl = Bodies.circle(x_b, y_b, 20);
-			    bl.groupId = 8;
+			   	blobs.push( bl );
 
-			    if(blobs.length>10){
-			   	blobs = [];
-			   	blobs.push( bl );
-			   	console.log("hi");
-			   	console.log(blobs.length);
-			   }else{
-			   	blobs.push( bl );
-			   }
-			   
-			   World.add( engine.world, [ bl ] );
-			   World.add( engine.world, [ createConstrainteObjPts( bl, { x: x_b, y: y_b} ) ] );
-			   //bPoints.push( new Degas.Point( x_b, y_b ) );
-			   temp = new Degas.Point( x_b, y_b );
-			   if(bPoints.length>10){
-			   	 bPoints = [];
-			   	 bPoints.push( new Degas.Point( x_b, y_b ) );
-			   }else{
-			   	 bPoints.push( new Degas.Point( x_b, y_b ) );
-			   	 //bPoints[z] = temp;
-			   	 //var which_one = bPoints.splice(z,1,temp);
-			   	 //console.log(which_one);
-			   	 //bPoints = [];
-			   }
-			 }
-			 checker++;
+			   	World.add( engine.world, [ bl ] );
+			    //World.add( engine.world, [ createConstrainteObjPts( bl, { x: x_b, y: y_b} ) ] );
+			    World.add( engine.world, [ createConstrainteObjPts( bl, { x: mousePos.x, y: mousePos.y} ) ] );
+
+			    bPoints.push( new Degas.Point( x_b, y_b ) );
+
 			}
 
 	</script>
