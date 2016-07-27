@@ -312,6 +312,11 @@
 			   	World.add( engine.world, [ bl[z] ] );
 			    //World.add( engine.world, [ createConstrainteObjPts( bl, { x: x_b, y: y_b} ) ] );
 			    World.add( engine.world, [ createConstrainteObjObj( bl[z], mouse ) ] );
+			    if(z>1){
+			    	World.add( engine.world, [ createConstrainteObjObj( bl[z], bl[z-1] ) ] );
+			    }else if(z==maxSphere-1){
+			    	World.add( engine.world, [ createConstrainteObjObj( bl[z], bl[0] ) ] );
+			    }
 
 			    bPoints.push( new Degas.Point( x_b, y_b ) );
 
