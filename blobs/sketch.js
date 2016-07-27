@@ -37,6 +37,7 @@ function setup() {
 
   capture = createCapture(VIDEO);
   capture.size(w, h);
+  capture.hide();
 
   // Initialize the physics
   physics = new VerletPhysics2D();
