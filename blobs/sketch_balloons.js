@@ -228,8 +228,8 @@ function draw() {
    }
 
   for( var i = 0; i < particles2.length; i++ ){
-     p2.points[i].x = particles[i].x;
-     p2.points[i].y = particles[i].y;
+     p2.points[i].x = particles2[i].x;
+     p2.points[i].y = particles2[i].y;
 
      particles2[i].behavior.radius = 100 + 40 * sin(seconds + i / 30.0);
      particles2[i].behavior.radiusSquared = particles2[i].behavior.radius * particles2[i].behavior.radius;
