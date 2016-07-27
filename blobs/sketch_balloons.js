@@ -34,7 +34,7 @@ var mainCircleRadius = 70;
 function setup() {
 
 
-  var w = 1100, h = 700;
+  var w = 1100, h = 600;
 
   createCanvas(w, h);
 
@@ -51,7 +51,7 @@ function setup() {
   baseColor = "#FFC3A0";
   titColor = "#8A494D";
   tit_titColor = "#522B2E";
-  
+
   p = new Degas.Path( pPoints );
   p.stroke = baseColor;
   p.fill = baseColor;
