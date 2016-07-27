@@ -43,9 +43,13 @@ function setup() {
   var pPoints = [];
   var bPoints = [];
 
+  console.log("hi-1");
+
   c = $('#defaultCanvas0')[0]; 
   c.width = w;
   c.height = h;
+
+  console.log("hi-2");
 
   d = new Degas( c );
 
@@ -58,6 +62,8 @@ function setup() {
   p.smooth();
 
   d.addChild( p ); 
+
+  console.log("hi-3");
 
   for (var i = 0; i < 50; i++) {
     var x = mainCircleRadius * Math.cos( Math.PI*2/50*i ) + w/2;
