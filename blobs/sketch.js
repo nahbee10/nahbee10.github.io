@@ -218,7 +218,7 @@ function draw() {
   /////////////for the motion history js part
 
   image(capture, 0, 0);
-  capture.loadPixels();
+  /*capture.loadPixels();
   if(capture.pixels.length>0){
     var w = capture.width, h = capture.height;
     if(!backgroundPixels){
@@ -304,7 +304,7 @@ function draw() {
         line(x + dx, y + dy, x + arrowWidth*dy, y - arrowWidth*dx);
       }
     }
-  }
+  }*/
 
   ////////////////
 
