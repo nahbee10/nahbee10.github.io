@@ -32,7 +32,7 @@ function setup() {
 
   frameRate(10); 
 
-  var w = 1280, h = 960;
+  var w = 960, h = 720;
 
   createCanvas(w, h);
 
@@ -44,36 +44,25 @@ function setup() {
   physics = new VerletPhysics2D();
   physics.setDrag(0.03);
 
-  console.log("hi-1");
-
   c = $('#c')[0]; 
   c.width = w;
   c.height = h;
 
-  console.log("hi-2");
-
   d = new Degas( c );
-  console.log("hi-3");
 
   baseColor = "#f2f2f2";
   p = new Degas.Path( pPoints );
-  console.log("hi-4");
   p.stroke = baseColor;
-  console.log("hi-6");
   p.fill = baseColor;
   p.smoothPointsNumber = 20;
   p.closed = true;
-  console.log("hi-7");
   //p.smooth();
-  console.log("hi-8");
 
   d.addChild( p ); 
 
-  console.log("hi-9");
-
   for (var i = 0; i < 50; i++) {
-    var x = mainCircleRadius * Math.cos( Math.PI*2/50*i );
-    var y = mainCircleRadius * Math.sin( Math.PI*2/50*i );
+    var x = mainCircleRadius * Math.cos( Math.PI*2/50*i ) + 400;
+    var y = mainCircleRadius * Math.sin( Math.PI*2/50*i ) + 400;
     particles.push(new Particle(new Vec2D(x, y), 4, 80, -1));
     pPoints.push( new Degas.Point( x, y ) );
   }
