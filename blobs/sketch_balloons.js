@@ -31,7 +31,7 @@ function setup() {
 
   var w = 960, h = 720;
 
-  //createCanvas(w, h);
+  createCanvas(w, h);
 
   // Initialize the physics
   physics = new VerletPhysics2D();
