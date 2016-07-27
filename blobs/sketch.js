@@ -117,7 +117,7 @@ function setup() {
 
   attractor = new Particle(new Vec2D(((width/4)*1),height/2), 100, width * 10, 0.3);
   attractor2 = new Particle(new Vec2D(((width/4)*3),height/2), 100, width * 10, 0.3);
-  repeler = new Particle(new Vec2D(mouseX, mouseY), 100, 50, -10);
+  repeler = new Particle(new Vec2D(mouseX, mouseY), 100, 50, -7);
   //attractor.lock();
 
   for (var i = 0; i < 50; i++) {
@@ -316,7 +316,7 @@ function draw() {
             var rescale = (maximumLength - length) / length;
             dx *= rescale;
             dy *= rescale;
-            if(i_for_r%50 == 0){
+            if(i_for_r%30 == 0){
             repelers[i_for_r] = new Particle(new Vec2D(x, y), 100, 50, -4);
             repelers[i_for_r].set(x,y);
             }
