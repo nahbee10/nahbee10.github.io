@@ -21,6 +21,10 @@ var repeler;
 
 var mainCircleRadius = 100;
 
+  var c, d;
+  var pPoints = [];
+  var bPoints = [];
+
 function addNewBoob(boot, tit_1, tit_2) {
   
 }
@@ -39,10 +43,6 @@ function setup() {
   physics = new VerletPhysics2D();
   physics.setDrag(0.03);
 
-  var c, d;
-  var pPoints = [];
-  var bPoints = [];
-
   console.log("hi-1");
 
   c = $('#defaultCanvas0')[0]; 
@@ -58,15 +58,17 @@ function setup() {
   p = new Degas.Path( pPoints );
   console.log("hi-4");
   p.stroke = baseColor;
+  console.log("hi-6");
   p.fill = baseColor;
   p.smoothPointsNumber = 20;
   p.closed = true;
+  console.log("hi-7");
   p.smooth();
-  console.log("hi-5");
+  console.log("hi-8");
 
   d.addChild( p ); 
 
-  console.log("hi-6");
+  console.log("hi-9");
 
   for (var i = 0; i < 50; i++) {
     var x = mainCircleRadius * Math.cos( Math.PI*2/50*i ) + w/2;
