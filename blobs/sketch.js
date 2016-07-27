@@ -30,6 +30,8 @@ var mainCircleRadius = 70;
 
 function setup() {
 
+  frameRate(10); 
+
   var w = 1280, h = 960;
 
   createCanvas(w, h);
@@ -216,7 +218,7 @@ function draw() {
   //randomSeed(99);
   background(55);
   /////////////for the motion history js part
-  frameRate(5); 
+  
   image(capture, 0, 0);
   capture.loadPixels();
   if(capture.pixels.length>0){
