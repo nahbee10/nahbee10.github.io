@@ -19,6 +19,8 @@ var capture;
 var motionHistoryImage;
 var repeler;
 
+var mainCircleRadius = 100;
+
 function addNewBoob(boot, tit_1, tit_2) {
   
 }
@@ -37,10 +39,32 @@ function setup() {
   physics = new VerletPhysics2D();
   physics.setDrag(0.03);
 
+  var c, d;
+  var pPoints = [];
+  var bPoints = [];
+
+  c = $('#defaultCanvas0')[0]; 
+  c.width = w;
+  c.height = h;
+
+  d = new Degas( c );
+
+  baseColor = "#f2f2f2";
+  p = new Degas.Path( pPoints );
+  p.stroke = baseColor;
+  p.fill = baseColor;
+  p.smoothPointsNumber = 20;
+  p.closed = true;
+  p.smooth();
+
+  d.addChild( p ); 
+
   for (var i = 0; i < 50; i++) {
-    particles.push(new Particle(new Vec2D(random(width), random(height)), 4, 80, -1));
+    var x = mainCircleRadius * Math.cos( Math.PI*2/50*i ) + w/2;
+    var y = mainCircleRadius * Math.sin( Math.PI*2/50*i ) + h/2;
+    particles.push(new Particle(new Vec2D(x, y), 4, 80, -1));
   }
-  for (var i = 0; i < 25; i++) {
+  /*for (var i = 0; i < 25; i++) {
     particles_tit.push(new Particle(new Vec2D(random(width), random(height)), 4, 80, -8));
   }
   for (var i = 0; i < 10; i++) {
@@ -55,14 +79,12 @@ function setup() {
   }
   for (var i = 0; i < 10; i++) {
     particles_tit_tit2.push(new Particle(new Vec2D(random(width), random(height)), 4, 80, -8));
-  }
+  }*/
 
   attractor = new Particle(new Vec2D((width/4),height/2), 100, width * 10, 0.3);
   attractor2 = new Particle(new Vec2D(((width/4)*3),height/2), 100, width * 10, 0.3);
   repeler = new Particle(new Vec2D(mouseX, mouseY), 100, 50, -4);
   //attractor.lock();
-  
-
 
   for (var i = 0; i < 50; i++) {
     var spring1 = new VerletSpring2D(particles[i], particles[(i + 1) % particles.length], 5, 0.01);
@@ -81,7 +103,7 @@ function setup() {
 
   }
 
-  for (var i = 0; i < 25; i++) {
+  /*for (var i = 0; i < 25; i++) {
     var spring1 = new VerletSpring2D(particles_tit[i], particles_tit[(i + 1) % particles_tit.length], 1, 0.01);
     springs.push(spring1);
     physics.addSpring(spring1);
@@ -164,7 +186,11 @@ function setup() {
       physics.addSpring(spring2);
     }
 
-  }
+  }*/
+
+
+  
+  loop();
 
 
 }
@@ -173,7 +199,6 @@ var backgroundPixels;
 function resetBackground(){
   backgroundPixels = undefined;
 }
-
 
 
 function draw() {
@@ -286,23 +311,19 @@ function draw() {
   
   repeler.set(mouseX,mouseY);
 
-  noStroke();
+  for( var i = 0; i < particles.length; i++ ){
+     p.points[i].x = particles[i].x;
+     p.points[i].y = particles[i].y;
+
+     particles[i].behavior.radius = 100 + 40 * sin(seconds + i / 30.0);
+     particles[i].behavior.radiusSquared = particles[i].behavior.radius * particles[i].behavior.radius;
+   }
 
 
-  fill(255,195,160);
-  beginShape();
-  smooth();
-  for (var i = 0; i < particles.length; i++) {
-    //particles[i].display();
-    vertex(particles[i].x, particles[i].y);
+  d.render();
 
-    // this doesn't work the way I expect !!  I'd like to be able to change the repulsion radius over time....
-    particles[i].behavior.radius = 100 + 40 * sin(seconds + i / 30.0);
-    particles[i].behavior.radiusSquared = particles[i].behavior.radius * particles[i].behavior.radius;
-  }
-  endShape(CLOSE);
 
-  fill(138,73,77,120);
+  /*fill(138,73,77,120);
 
   beginShape();
   smooth();
