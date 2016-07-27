@@ -70,8 +70,8 @@ function setup() {
   console.log("hi-9");
 
   for (var i = 0; i < 20; i++) {
-    var x = mainCircleRadius * Math.cos( Math.PI*2/20*i ) + w/2-200;
-    var y = mainCircleRadius * Math.sin( Math.PI*2/20*i ) + h/2-200;
+    var x = mainCircleRadius * Math.cos( Math.PI*2/20*i ) + width/2-200;
+    var y = mainCircleRadius * Math.sin( Math.PI*2/20*i ) + height/2-200;
     particles.push(new Particle(new Vec2D(x, y), 4, 80, -8));
     pPoints.push( new Degas.Point( x, y ) );
   }
@@ -92,8 +92,8 @@ function setup() {
     particles_tit_tit2.push(new Particle(new Vec2D(random(width), random(height)), 4, 80, -8));
   }*/
 
-  attractor = new Particle(new Vec2D((w/4),h/2), 100, w * 10, 0.3);
-  attractor2 = new Particle(new Vec2D(((w/4)*3),h/2), 100, w * 10, 0.3);
+  attractor = new Particle(new Vec2D((width/4),height/2), 100, width * 10, 0.3);
+  attractor2 = new Particle(new Vec2D(((width/4)*3),height/2), 100, width * 10, 0.3);
   repeler = new Particle(new Vec2D(mouseX, mouseY), 100, 50, -4);
   //attractor.lock();
 
@@ -313,8 +313,8 @@ function draw() {
 
   //attractor.display();
 
-  attractor.set((w/4),h/2);
-  attractor2.set(((w/4)*3),h/2);
+  attractor.set((width/4),height/2);
+  attractor2.set(((width/4)*3),height/2);
   
   repeler.set(mouseX,mouseY);
 
