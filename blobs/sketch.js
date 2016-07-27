@@ -202,7 +202,7 @@ function setup() {
 
 
   
-  loop();
+  engine.render.canvas.style.opacity = 10;
 
 
 }
