@@ -62,10 +62,11 @@ function setup() {
   p.smoothPointsNumber = 20;
   p.closed = true;
   p.smooth();
+  console.log("hi-5");
 
   d.addChild( p ); 
 
-  console.log("hi-5");
+  console.log("hi-6");
 
   for (var i = 0; i < 50; i++) {
     var x = mainCircleRadius * Math.cos( Math.PI*2/50*i ) + w/2;
