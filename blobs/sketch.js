@@ -54,7 +54,9 @@ function setup() {
 
   d = new Degas( c );
 
-  baseColor = "#f2f2f2";
+  baseColor = "#FFC3A0";
+  titColor = "#8A494D";
+  tit_titColor = "#522B2E";
   p = new Degas.Path( pPoints );
   p.stroke = baseColor;
   p.fill = baseColor;
