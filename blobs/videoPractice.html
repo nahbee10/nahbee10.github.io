@@ -123,7 +123,7 @@
 			}
 
 			function createConstrainteObjObj( ba, bb, stiffness ){ 
-			 return Constraint.create({ bodyA: ba, bodyB: bb, stiffness: stiffness||1 }) 
+			 return Constraint.create({ bodyA: ba, bodyB: bb, stiffness: stiffness||0.0001 }) 
 			}
 
 			function createConstrainteObjPts( ba, pa, stiffness ){ 
