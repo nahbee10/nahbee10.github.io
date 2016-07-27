@@ -30,7 +30,7 @@ var mainCircleRadius = 70;
 
 function setup() {
 
-  frameRate(10); 
+  frameRate(5); 
 
   var w = 960, h = 720;
 
