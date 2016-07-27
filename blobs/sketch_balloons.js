@@ -37,7 +37,7 @@ function setup() {
   physics = new VerletPhysics2D();
   physics.setDrag(0.03);
 
-  c = $('#c')[0]; 
+  c = $('#defaultCanvas0')[0]; 
   c.width = w;
   c.height = h;
 
