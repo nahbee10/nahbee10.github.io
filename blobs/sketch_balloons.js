@@ -29,7 +29,7 @@ var mainCircleRadius = 70;
 function setup() {
 
 
-  var w = 640, h = 480;
+  var w = 960, h = 720;
 
   createCanvas(w, h);
 
