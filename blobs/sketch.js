@@ -216,9 +216,9 @@ function draw() {
   //randomSeed(99);
   background(55);
   /////////////for the motion history js part
-
+  frameRate(10); 
   image(capture, 0, 0);
-  /*capture.loadPixels();
+  capture.loadPixels();
   if(capture.pixels.length>0){
     var w = capture.width, h = capture.height;
     if(!backgroundPixels){
@@ -304,9 +304,11 @@ function draw() {
         line(x + dx, y + dy, x + arrowWidth*dy, y - arrowWidth*dx);
       }
     }
-  }*/
+  }
 
   ////////////////
+
+  frameRate(30);
 
   seconds = millis() / 1000;
   // Update the physics world
@@ -323,8 +325,8 @@ function draw() {
      p.points[i].x = particles[i].x;
      p.points[i].y = particles[i].y;
 
-     //particles[i].behavior.radius = 100 + 40 * sin(seconds + i / 30.0);
-     //particles[i].behavior.radiusSquared = particles[i].behavior.radius * particles[i].behavior.radius;
+     particles[i].behavior.radius = 100 + 40 * sin(seconds + i / 30.0);
+     particles[i].behavior.radiusSquared = particles[i].behavior.radius * particles[i].behavior.radius;
    }
 
   p.smooth();
