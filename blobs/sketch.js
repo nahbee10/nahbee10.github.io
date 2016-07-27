@@ -216,7 +216,7 @@ function draw() {
   //randomSeed(99);
   background(55);
   /////////////for the motion history js part
-  frameRate(10); 
+  frameRate(5); 
   image(capture, 0, 0);
   capture.loadPixels();
   if(capture.pixels.length>0){
