@@ -22,6 +22,9 @@ var mainCircleRadius = 70;
   var c, d;
   var pPoints = [];
   var pPoints2 = [];
+  var pPoints_tit = [];
+  var pPoints_tit2 = [];
+
 
 
 
@@ -44,6 +47,7 @@ function setup() {
   d = new Degas( c );
 
   baseColor = "#FFC3A0";
+  titColor = "#8A494D";
   p = new Degas.Path( pPoints );
   p.stroke = baseColor;
   p.fill = baseColor;
@@ -55,16 +59,29 @@ function setup() {
   p2.fill = baseColor;
   p2.smoothPointsNumber = 20;
   p2.closed = true;
+
+  p_tit = new Degas.Path( pPoints_tit );
+  p_tit.stroke = titColor;
+  p_tit.fill = titColor;
+  p_tit.smoothPointsNumber = 20;
+  p_tit.closed = true;
   //p.smooth();
 
   d.addChild( p ); 
   d.addChild( p2 ); 
+  d.addChild( p_tit ); 
 
   for (var i = 0; i < 50; i++) {
     var x = mainCircleRadius * Math.cos( Math.PI*2/50*i ) + (width*1)/4;
     var y = mainCircleRadius * Math.sin( Math.PI*2/50*i ) + height/2;
     particles.push(new Particle(new Vec2D(x, y), 4, 80, -1));
     pPoints.push( new Degas.Point( x, y ) );
+  }
+  for (var i = 0; i < 25; i++) {
+    var x = mainCircleRadius * Math.cos( Math.PI*2/25*i ) + (width*1)/4;
+    var y = mainCircleRadius * Math.sin( Math.PI*2/25*i ) + height/2;
+    particles_tit.push(new Particle(new Vec2D(x, y), 4, 80, -8));
+    pPoints_tit.push( new Degas.Point( x, y ) );
   }
   /*for (var i = 0; i < 25; i++) {
     particles_tit.push(new Particle(new Vec2D(random(width), random(height)), 4, 80, -8));
@@ -112,7 +129,7 @@ function setup() {
 
   }
 
-  /*for (var i = 0; i < 25; i++) {
+  for (var i = 0; i < 25; i++) {
     var spring1 = new VerletSpring2D(particles_tit[i], particles_tit[(i + 1) % particles_tit.length], 1, 0.01);
     springs.push(spring1);
     physics.addSpring(spring1);
@@ -128,7 +145,7 @@ function setup() {
     }
 
   }
-
+/*
   for (var i = 0; i < 10; i++) {
     var spring1 = new VerletSpring2D(particles_tit_tit[i], particles_tit_tit[(i + 1) % particles_tit_tit.length], 1, 0.1);
     springs.push(spring1);
@@ -235,8 +252,17 @@ function draw() {
      particles2[i].behavior.radiusSquared = particles2[i].behavior.radius * particles2[i].behavior.radius;
    }
 
+  for( var i = 0; i < particles_tit.length; i++ ){
+     p_tit.points[i].x = particles_tit[i].x;
+     p_tit.points[i].y = particles_tit[i].y;
+
+     particles_tit[i].behavior.radius = 10 + 1 * sin(seconds + i / 30.0);
+     particles_tit[i].behavior.radiusSquared = particles_tit[i].behavior.radius * particles_tit[i].behavior.radius;
+   }
+
   p.smooth();
   p2.smooth();
+  p_tit.smooth();
 
   d.render();
 
