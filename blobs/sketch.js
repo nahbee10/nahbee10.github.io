@@ -63,7 +63,7 @@ function setup() {
   p.smoothPointsNumber = 20;
   p.closed = true;
   console.log("hi-7");
-  p.smooth();
+  //p.smooth();
   console.log("hi-8");
 
   d.addChild( p ); 
