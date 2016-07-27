@@ -63,6 +63,7 @@ function setup() {
     var x = mainCircleRadius * Math.cos( Math.PI*2/50*i ) + w/2;
     var y = mainCircleRadius * Math.sin( Math.PI*2/50*i ) + h/2;
     particles.push(new Particle(new Vec2D(x, y), 4, 80, -1));
+    pPoints.push( new Degas.Point( x, y ) );
   }
   /*for (var i = 0; i < 25; i++) {
     particles_tit.push(new Particle(new Vec2D(random(width), random(height)), 4, 80, -8));
