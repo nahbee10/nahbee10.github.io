@@ -6,7 +6,7 @@ var Degas = function( canvas ){
 	this.canvas = canvas;
 	this.ctx = this.canvas.getContext('2d');
 	this.fullClear = true;
-	this.clearColor = "rgba(0,0,0,0)";
+	this.clearColor = "rgba(0,0,0,1)";
 	this.children = [];
 }
 
