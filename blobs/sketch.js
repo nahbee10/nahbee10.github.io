@@ -323,8 +323,8 @@ function draw() {
      p.points[i].x = particles[i].x;
      p.points[i].y = particles[i].y;
 
-     particles[i].behavior.radius = 100 + 40 * sin(seconds + i / 30.0);
-     particles[i].behavior.radiusSquared = particles[i].behavior.radius * particles[i].behavior.radius;
+     //particles[i].behavior.radius = 100 + 40 * sin(seconds + i / 30.0);
+     //particles[i].behavior.radiusSquared = particles[i].behavior.radius * particles[i].behavior.radius;
    }
 
   p.smooth();
