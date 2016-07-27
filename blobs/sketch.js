@@ -92,7 +92,7 @@ function setup() {
     particles_tit_tit2.push(new Particle(new Vec2D(random(width), random(height)), 4, 80, -8));
   }*/
 
-  attractor = new Particle(new Vec2D((width/4),height/2), 100, width * 10, 0.3);
+  attractor = new Particle(new Vec2D(0,0), 100, width * 10, 0.3);
   attractor2 = new Particle(new Vec2D(((width/4)*3),height/2), 100, width * 10, 0.3);
   repeler = new Particle(new Vec2D(mouseX, mouseY), 100, 50, -4);
   //attractor.lock();
@@ -313,7 +313,7 @@ function draw() {
 
   //attractor.display();
 
-  attractor.set((width/4),height/2);
+  attractor.set(0,0);
   attractor2.set(((width/4)*3),height/2);
   
   repeler.set(mouseX,mouseY);
