@@ -92,8 +92,8 @@ function setup() {
     particles_tit_tit2.push(new Particle(new Vec2D(random(width), random(height)), 4, 80, -8));
   }*/
 
-  attractor = new Particle(new Vec2D((w/4),h/2), 100, width * 10, 0.3);
-  attractor2 = new Particle(new Vec2D(((w/4)*3),h/2), 100, width * 10, 0.3);
+  attractor = new Particle(new Vec2D((w/4),h/2), 100, w * 10, 0.3);
+  attractor2 = new Particle(new Vec2D(((w/4)*3),h/2), 100, w * 10, 0.3);
   repeler = new Particle(new Vec2D(mouseX, mouseY), 100, 50, -4);
   //attractor.lock();
 
