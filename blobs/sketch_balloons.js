@@ -94,7 +94,7 @@ function setup() {
     particles_tit.push(new Particle(new Vec2D(x, y), 4, 80, -8));
     pPoints_tit.push( new Degas.Point( x, y ) );
   }
-    for (var i = 0; i < 10; i++) {
+  for (var i = 0; i < 10; i++) {
     var x = mainCircleRadius * Math.cos( Math.PI*2/25*i ) + (width*1)/4;
     var y = mainCircleRadius * Math.sin( Math.PI*2/25*i ) + height/2;
     particles_tit_tit.push(new Particle(new Vec2D(x, y), 4, 80, -8));
