@@ -316,7 +316,7 @@ function draw() {
             var rescale = (maximumLength - length) / length;
             dx *= rescale;
             dy *= rescale;
-            if(i_for_r%30 == 0){
+            if(i_for_r%24 == 0){
             repelers[i_for_r] = new Particle(new Vec2D(x, y), 100, 50, -4);
             repelers[i_for_r].set(x,y);
             }
