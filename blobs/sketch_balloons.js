@@ -20,7 +20,8 @@ var repeler;
 var mainCircleRadius = 70;
 
   var c, d;
-  var pPoints, pPoints2 = [];
+  var pPoints = [];
+  var pPoints2 = [];
 
 
 
