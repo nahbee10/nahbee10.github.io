@@ -201,10 +201,6 @@ function setup() {
   }*/
 
 
-  
-  engine.render.canvas.style.opacity = 10;
-
-
 }
 
 var backgroundPixels;
