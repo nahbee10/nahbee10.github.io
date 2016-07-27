@@ -52,6 +52,7 @@ function setup() {
   console.log("hi-2");
 
   d = new Degas( c );
+  console.log("hi-3");
 
   baseColor = "#f2f2f2";
   p = new Degas.Path( pPoints );
@@ -63,7 +64,7 @@ function setup() {
 
   d.addChild( p ); 
 
-  console.log("hi-3");
+  console.log("hi-4");
 
   for (var i = 0; i < 50; i++) {
     var x = mainCircleRadius * Math.cos( Math.PI*2/50*i ) + w/2;
