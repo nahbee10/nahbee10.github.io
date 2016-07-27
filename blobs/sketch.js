@@ -25,14 +25,12 @@ var mainCircleRadius = 100;
   var pPoints = [];
   var bPoints = [];
 
-  var w = 1280, h = 960;
+
   c = $('#defaultCanvas0')[0]; 
-
-
-
+  
 function setup() {
 
-
+  var w = 1280, h = 960;
 
   createCanvas(w, h);
 
@@ -46,7 +44,9 @@ function setup() {
 
   console.log("hi-1");
 
- 
+
+  c.width = w;
+  c.height = h;
 
   console.log("hi-2");
 
