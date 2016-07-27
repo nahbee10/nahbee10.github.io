@@ -69,10 +69,10 @@ function setup() {
 
   console.log("hi-9");
 
-  for (var i = 0; i < 50; i++) {
-    var x = mainCircleRadius * Math.cos( Math.PI*2/50*i ) + w/2;
-    var y = mainCircleRadius * Math.sin( Math.PI*2/50*i ) + h/2;
-    particles.push(new Particle(new Vec2D(x, y), 4, 80, -1));
+  for (var i = 0; i < 20; i++) {
+    var x = mainCircleRadius * Math.cos( Math.PI*2/20*i ) + w/2-200;
+    var y = mainCircleRadius * Math.sin( Math.PI*2/20*i ) + h/2-200;
+    particles.push(new Particle(new Vec2D(x, y), 4, 80, -8));
     pPoints.push( new Degas.Point( x, y ) );
   }
   /*for (var i = 0; i < 25; i++) {
@@ -97,17 +97,17 @@ function setup() {
   repeler = new Particle(new Vec2D(mouseX, mouseY), 100, 50, -4);
   //attractor.lock();
 
-  for (var i = 0; i < 50; i++) {
-    var spring1 = new VerletSpring2D(particles[i], particles[(i + 1) % particles.length], 5, 0.01);
+  for (var i = 0; i < 20; i++) {
+    var spring1 = new VerletSpring2D(particles[i], particles[(i + 1) % particles.length], 1, 0.01);
     springs.push(spring1);
     physics.addSpring(spring1);
     if (i % 2 == 0) {
-      var spring2 = new VerletSpring2D(particles[i], particles[(i + 25) % particles.length], 400, 0.001);
+      var spring2 = new VerletSpring2D(particles[i], particles[(i + 10) % particles.length], 400, 0.001);
       springs.push(spring2);
       physics.addSpring(spring2);
     }
     if (i % 1 == 0) {
-      var spring2 = new VerletSpring2D(particles[i], attractor, 200, 0.001);
+      var spring2 = new VerletSpring2D(particles[i], attractor, 10, 0.01);
       springs.push(spring2);
       physics.addSpring(spring2);
     }
