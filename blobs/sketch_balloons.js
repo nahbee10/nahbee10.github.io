@@ -29,7 +29,7 @@ var mainCircleRadius = 70;
 function setup() {
 
 
-  var w = 960, h = 720;
+  var w = 640, h = 480;
 
   createCanvas(w, h);
 
@@ -37,7 +37,7 @@ function setup() {
   physics = new VerletPhysics2D();
   physics.setDrag(0.03);
 
-  c = $('#defaultCanvas0')[0]; 
+  c = $('#c')[0]; 
   c.width = w;
   c.height = h;
 
