@@ -44,7 +44,7 @@ function setup() {
 
   console.log("hi-1");
 
-  c = $('#defaultCanvas0')[0]; 
+  c = $('#c')[0]; 
   c.width = w;
   c.height = h;
 
