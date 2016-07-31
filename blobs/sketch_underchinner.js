@@ -81,7 +81,7 @@ function setup() {
   first_class_blob = new Bblob(d,"#FFC3A0", "#8A494D", "#C88979", x_el, y_el, x_el_t, y_el_t, vec_att, vec_att2, 0, "left");
   first_class_blob2 = new Bblob(d,"#FFC3A0", "#8A494D", "#C88979", x_el_r, y_el_r, x_el_t, y_el_t, vec_att_next, vec_att2_next, dista, "right");
 
-  repeler = new Particle(new Vec2D(mouseX, mouseY), 100, 100, -1);
+  repeler = new Particle(new Vec2D(mouseX, mouseY), 100, 100, -5);
 
   first_class_blob.pushParticles();
   first_class_blob2.pushParticles();
