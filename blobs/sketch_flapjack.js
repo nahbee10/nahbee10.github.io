@@ -36,6 +36,9 @@ var y_el_t = [y_el[3],((y_el[3]+y_el[4])/2)+20,y_el[4]];
 var x_el_t_t = [x_el[3],(x_el[3]*1/3+x_el[4]*2/3),(x_el[3]*2/3+x_el[4]*1/3),x_el[4],(x_el[3]*2/3+x_el[4]*1/3),(x_el[3]*1/3+x_el[4]*2/3)];
 var y_el_t_t = [y_el[3],y_el[3]-20,y_el[3]-20,y_el[4],y_el[3]+20,y_el[3]+20];
 
+console.log(x_el_t_t);
+console.log(y_el_t_t);
+
 var magnif = 4;
 
 
@@ -63,8 +66,8 @@ function setup() {
   console.log(vec_att2);
   var vec_att_next = new Vec2D(vec_att.x+350, vec_att.y);
   var vec_att2_next = new Vec2D(vec_att2.x+350, vec_att2.y);
-  first_class_blob = new Bblob(d,"#FFC3A0", "#8A494D", "#C88979", x_el, y_el, x_el_t, y_el_t, x_el_t, y_el_t, vec_att, vec_att2, 0);
-  first_class_blob2 = new Bblob(d,"#FFC3A0", "#8A494D", "#C88979", x_el, y_el, x_el_t, y_el_t, x_el_t, y_el_t, vec_att_next, vec_att2_next, 350);
+  first_class_blob = new Bblob(d,"#FFC3A0", "#8A494D", "#C88979", x_el, y_el, x_el_t, y_el_t, x_el_t_t, y_el_t_t, vec_att, vec_att2, 0);
+  first_class_blob2 = new Bblob(d,"#FFC3A0", "#8A494D", "#C88979", x_el, y_el, x_el_t, y_el_t, x_el_t_t, y_el_t_t, vec_att_next, vec_att2_next, 350);
 
   repeler = new Particle(new Vec2D(mouseX, mouseY), 100, 100, -7);
 
@@ -92,7 +95,7 @@ function draw() {
 
 }
 
-function Bblob(which_Degas, color, t_color, t_t_color, x_el, y_el, x_el_t, y_el_t, x_el_t, y_el_t, fir_att, sec_att, x_cord) {
+function Bblob(which_Degas, color, t_color, t_t_color, x_el, y_el, x_el_t, y_el_t, x_el_t_t, y_el_t_t, fir_att, sec_att, x_cord) {
   this.particles = [];
   this.attractor = new Particle(fir_att, 50, 50, 5);
   this.attractor2 = new Particle(sec_att, 50, 50, 5);

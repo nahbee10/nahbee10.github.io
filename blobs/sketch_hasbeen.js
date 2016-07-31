@@ -33,6 +33,12 @@ var first_class_blob2;
 var x_el_t = [x_el[4],(x_el[4]+x_el[5])/2,x_el[5]];
 var y_el_t = [y_el[4],((y_el[4]+y_el[5])/2)+20,y_el[5]];
 
+var x_el_t_t = [x_el[3],x_el[4],x_el[5],x_el[6],x_el[5],x_el[4]];
+var y_el_t_t = [y_el[3],y_el[4]-20,y_el[5]-20,y_el[6],y_el[5],y_el[4]];
+
+console.log(x_el_t_t);
+console.log(y_el_t_t);
+
 var magnif = 6;
 
 
@@ -60,8 +66,8 @@ function setup() {
   console.log(vec_att2);
   var vec_att_next = new Vec2D(vec_att.x+300, vec_att.y);
   var vec_att2_next = new Vec2D(vec_att2.x+300, vec_att2.y);
-  first_class_blob = new Bblob(d,"#FFC3A0", "#8A494D", x_el, y_el, x_el_t, y_el_t, vec_att, vec_att2, 0);
-  first_class_blob2 = new Bblob(d,"#FFC3A0", "#8A494D", x_el, y_el, x_el_t, y_el_t, vec_att_next, vec_att2_next, 300);
+  first_class_blob = new Bblob(d,"#FFC3A0", "#8A494D", "#C88979", x_el, y_el, x_el_t, y_el_t, vec_att, vec_att2, 0);
+  first_class_blob2 = new Bblob(d,"#FFC3A0", "#8A494D", "#C88979", x_el, y_el, x_el_t, y_el_t, vec_att_next, vec_att2_next, 300);
 
   repeler = new Particle(new Vec2D(mouseX, mouseY), 100, 100, -7);
 
@@ -89,15 +95,17 @@ function draw() {
 
 }
 
-function Bblob(which_Degas, color, t_color, x_el, y_el, x_el_t, y_el_t, fir_att, sec_att, x_cord) {
+function Bblob(which_Degas, color, t_color, t_t_color, x_el, y_el, x_el_t, y_el_t, fir_att, sec_att, x_cord) {
   this.particles = [];
   this.attractor = new Particle(fir_att, 50, 50, 5);
   this.attractor2 = new Particle(sec_att, 50, 50, 5);
   this.pPoints = [];
   this.pPoints_t = [];
+  this.pPoints_t_t = [];
 
     this.baseColor = color;
     this.titColor = t_color;
+    this.titColor2 = t_t_color;
 
     this.p = new Degas.Path(this.pPoints);
     this.p.stroke = this.baseColor;
@@ -111,9 +119,17 @@ function Bblob(which_Degas, color, t_color, x_el, y_el, x_el_t, y_el_t, fir_att,
     this.p_t.smoothPointsNumber = 20;
     this.p_t.closed = true;
 
+    this.p_t_t = new Degas.Path(this.pPoints_t_t);
+    this.p_t_t.stroke = this.titColor2;
+    this.p_t_t.fill = this.titColor2;
+    this.p_t_t.smoothPointsNumber = 20;
+    this.p_t_t.closed = true;
+
 
     which_Degas.addChild(this.p);
+    which_Degas.addChild(this.p_t_t);
     which_Degas.addChild(this.p_t);
+    //
 
     this.pushParticles = function(){
       for (var i = 0; i < x_el.length; i++) {
@@ -127,6 +143,12 @@ function Bblob(which_Degas, color, t_color, x_el, y_el, x_el_t, y_el_t, fir_att,
         this.x = x_el_t[i]*magnif+x_cord;
         this.y = y_el_t[i]*magnif;
         this.pPoints_t.push( new Degas.Point( this.x, this.y ) );
+      }
+
+      for (var i = 0; i < x_el_t_t.length; i++) {
+        this.x = x_el_t_t[i]*magnif+x_cord;
+        this.y = y_el_t_t[i]*magnif;
+        this.pPoints_t_t.push( new Degas.Point( this.x, this.y ) );
       }
     }
 
@@ -168,8 +190,21 @@ function Bblob(which_Degas, color, t_color, x_el, y_el, x_el_t, y_el_t, fir_att,
     this.fourth_y = Math.floor(this.particles[4].y);
     this.fifth_x = Math.floor(this.particles[5].x);
     this.fifth_y = Math.floor(this.particles[5].y);
+    this.third_x = Math.floor(this.particles[3].x);
+    this.third_y = Math.floor(this.particles[3].y);
+    this.sixth_x = Math.floor(this.particles[6].x);
+    this.sixth_y = Math.floor(this.particles[6].y);
     //this.x_changed = [this.fourth_x, (this.fourth_x+this.fifth_x)/2, this.fifth_x, (this.fourth_x+this.fifth_x)*3/5, (this.fourth_x+this.fifth_x)*2/5];
     //this.y_changed = [this.fourth_y, (this.fourth_y+this.fifth_y)/2+10, this.fifth_y, (this.fourth_y+this.fifth_y)/2-40, (this.fourth_y+this.fifth_y)/2-40];
+    //this.x_changed_t = [this.third_x,this.fourth_x,this.fifth_x,this.sixth_x,this.fifth_x,this.fourth_x];
+    //this.y_changed_t = [this.third_y,(this.fourth_y-20),(this.fifth_y-20),this.sixth_y,this.fifth_x,this.fourth_y];
+    this.x_changed_t = [this.third_x,this.fourth_x,this.fifth_x,this.sixth_x,this.fifth_x+15,this.fourth_x-15];
+    this.y_changed_t = [this.third_y,(this.fourth_y-52),(this.fifth_y-52),this.sixth_y,this.fifth_y,this.fourth_y];
+    for( var i = 0; i < this.p_t_t.points.length; i++ ){
+       this.p_t_t.points[i].x = this.x_changed_t[i];
+       this.p_t_t.points[i].y = this.y_changed_t[i];
+     }
+
     this.x_changed = [this.fourth_x, (this.fourth_x+this.fifth_x)/2, this.fifth_x];
     this.y_changed = [this.fourth_y, (this.fourth_y+this.fifth_y)/2+20, this.fifth_y];
     for( var i = 0; i < this.p_t.points.length; i++ ){
@@ -177,8 +212,10 @@ function Bblob(which_Degas, color, t_color, x_el, y_el, x_el_t, y_el_t, fir_att,
        this.p_t.points[i].y = this.y_changed[i];
      }
 
+
     this.p.smooth();
     this.p_t.smooth();
+    this.p_t_t.smooth();
 
     
   }
