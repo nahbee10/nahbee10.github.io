@@ -5,23 +5,14 @@
 <style type="text/css">
 	.st0{fill:#FF00DB;}
 </style>
-<g>
-	<circle class="st0" cx="8.1" cy="7.3" r="3.6"/>
-	<circle class="st0" cx="14.9" cy="17.6" r="3.2"/>
-	<circle class="st0" cx="16.5" cy="28.1" r="1.6"/>
-	<circle class="st0" cx="14.1" cy="40.3" r="2.4"/>
-	<circle class="st0" cx="8.1" cy="54.2" r="3.6"/>
-	<circle class="st0" cx="6.3" cy="66.7" r="1.8"/>
-	<circle class="st0" cx="14.1" cy="78.7" r="2.4"/>
-	<circle class="st0" cx="27.8" cy="83.7" r="2.6"/>
-	<circle class="st0" cx="43.7" cy="84" r="2.8"/>
-	<circle class="st0" cx="58.6" cy="81.6" r="2.8"/>
-	<circle class="st0" cx="70" cy="71.3" r="2.8"/>
-	<circle class="st0" cx="75.4" cy="60.3" r="2.5"/>
-	<circle class="st0" cx="72.7" cy="48.4" r="2.7"/>
-	<circle class="st0" cx="64.3" cy="37.9" r="2.8"/>
-	<circle class="st0" cx="63.7" cy="25.9" r="2.2"/>
-	<circle class="st0" cx="67.2" cy="17.2" r="2.8"/>
-	<circle class="st0" cx="75.4" cy="9.8" r="2.5"/>
-</g>
+<circle class="st0" cx="66.8" cy="7.3" r="3.6"/>
+<circle class="st0" cx="58.4" cy="28.1" r="1.6"/>
+<circle class="st0" cx="66.8" cy="54.2" r="3.6"/>
+<circle class="st0" cx="60.8" cy="78.7" r="2.4"/>
+<circle class="st0" cx="47.1" cy="83.7" r="2.6"/>
+<circle class="st0" cx="27.8" cy="83.7" r="2.6"/>
+<circle class="st0" cx="14.1" cy="78.7" r="2.4"/>
+<circle class="st0" cx="8.1" cy="54.2" r="3.6"/>
+<circle class="st0" cx="16.5" cy="28.1" r="1.6"/>
+<circle class="st0" cx="8.1" cy="7.3" r="3.6"/>
 </svg>
