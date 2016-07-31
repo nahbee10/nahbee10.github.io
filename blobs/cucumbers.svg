@@ -6,41 +6,15 @@
 	.st0{fill:#FF00DB;}
 </style>
 <g>
-	<circle class="st0" cx="2.4" cy="2.4" r="2.4"/>
-	<circle class="st0" cx="6.9" cy="10.4" r="2.1"/>
-	<circle class="st0" cx="11.3" cy="20.3" r="2.4"/>
-	<circle class="st0" cx="15.5" cy="31.6" r="1.8"/>
-	<circle class="st0" cx="15.5" cy="44.1" r="1.8"/>
-	<circle class="st0" cx="17.9" cy="59" r="2.4"/>
-	<circle class="st0" cx="19.4" cy="74.8" r="1.5"/>
-	<circle class="st0" cx="23.2" cy="84.6" r="2.4"/>
+	<circle class="st0" cx="62.8" cy="2.4" r="2.4"/>
+	<circle class="st0" cx="53.9" cy="20.3" r="2.4"/>
+	<circle class="st0" cx="49.7" cy="44.1" r="1.8"/>
+	<circle class="st0" cx="45.8" cy="74.8" r="1.5"/>
+	<circle class="st0" cx="35.1" cy="92" r="2.1"/>
 	<circle class="st0" cx="30.1" cy="92" r="2.1"/>
-	<circle class="st0" cx="38.1" cy="86.4" r="1.8"/>
-	<circle class="st0" cx="42" cy="78.3" r="2.1"/>
-	<circle class="st0" cx="46.5" cy="70.3" r="2.4"/>
-	<circle class="st0" cx="48.8" cy="56" r="2.4"/>
-	<circle class="st0" cx="48.8" cy="41.7" r="2.4"/>
-	<circle class="st0" cx="51.2" cy="28.6" r="2.4"/>
-	<circle class="st0" cx="53.9" cy="15.2" r="2.7"/>
-	<circle class="st0" cx="59" cy="4.8" r="2.4"/>
-</g>
-<g>
-	<circle class="st0" cx="59" cy="2.4" r="2.4"/>
-	<circle class="st0" cx="54.5" cy="10.4" r="2.1"/>
-	<circle class="st0" cx="50" cy="20.3" r="2.4"/>
-	<circle class="st0" cx="45.9" cy="31.6" r="1.8"/>
-	<circle class="st0" cx="45.9" cy="44.1" r="1.8"/>
-	<circle class="st0" cx="43.5" cy="59" r="2.4"/>
-	<circle class="st0" cx="42" cy="74.8" r="1.5"/>
-	<circle class="st0" cx="38.1" cy="84.6" r="2.4"/>
-	<circle class="st0" cx="31.3" cy="92" r="2.1"/>
-	<circle class="st0" cx="23.2" cy="86.4" r="1.8"/>
-	<circle class="st0" cx="19.4" cy="78.3" r="2.1"/>
-	<circle class="st0" cx="14.9" cy="70.3" r="2.4"/>
-	<circle class="st0" cx="12.5" cy="56" r="2.4"/>
-	<circle class="st0" cx="12.5" cy="41.7" r="2.4"/>
-	<circle class="st0" cx="10.1" cy="28.6" r="2.4"/>
-	<circle class="st0" cx="7.4" cy="15.2" r="2.7"/>
-	<circle class="st0" cx="2.4" cy="4.8" r="2.4"/>
+	<circle class="st0" cx="19.4" cy="74.8" r="1.5"/>
+	<circle class="st0" cx="15.5" cy="44.1" r="1.8"/>
+	<circle class="st0" cx="11.3" cy="20.3" r="2.4"/>
+	<circle class="st0" cx="2.4" cy="2.4" r="2.4"/>
 </g>
 </svg>
