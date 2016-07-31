@@ -70,10 +70,6 @@ function setup() {
   var vec_att2 = new Vec2D(((x_el[0]*9/10+x_el[Math.floor(x_el.length/2)]/10)*magnif),(y_el[0]*9/10+y_el[Math.floor(y_el.length/2)]/10)*magnif+100);
   var vec_att_next = new Vec2D(vec_att.x+300, vec_att.y);
   var vec_att2_next = new Vec2D(vec_att2.x+300, vec_att2.y);
-  console.log(vec_att);
-  console.log(vec_att2);
-  console.log(vec_att_next);
-  console.log(vec_att2_next);
 
   var vec_att_t = new Vec2D(((x_el[0]/2+x_el[Math.floor(x_el.length/2)]/2)*magnif),(y_el[0]/2+y_el[Math.floor(x_el.length/2)]/2)*magnif-30);
   first_class_blob = new Bblob(d,"#FFC3A0", "#C88979", "#8A494D", x_el, y_el, vec_att, vec_att2, vec_att_t, 0, "left");
