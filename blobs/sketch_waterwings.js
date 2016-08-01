@@ -45,14 +45,15 @@ var first_class_blob2;
 
 //var x_el = [2.8, 7.2, 3.9, 10.4, 26.1, 43.8, 59.5, 65.9, 62.7, 67.1];
 //var y_el = [3.1, 24.6, 44.6, 59.1, 65.4, 65.4, 59.1, 44.6, 24.6, 3.1];
-
-var x_el_t = [x_el[3],x_el[4]+10,x_el[4]-10,x_el[5]];
-var y_el_t = [y_el[3],y_el[4]-10,y_el[4]+10,y_el[5]];
+var m_p_x_g = (x_el[4]+x_el[3])/2-15;
+var m_p_y_g = (y_el[4]+y_el[3])/2-15;
+var x_el_t = [x_el[2], m_p_x_g-10, m_p_x_g+10, x_el[5]];
+var y_el_t = [y_el[2], m_p_y_g+10, m_p_y_g+10,y_el[5]];
 
 var x_el_t_t = [x_el[3]+10,x_el[3],x_el[3]-10];
 var y_el_t_t = [y_el[3]-10,y_el[3],y_el[3]+10];
 
-var magnif = 6;
+var magnif = 5;
 var dista = 400;
 
 
@@ -199,24 +200,30 @@ function Bblob(which_Degas, color, t_color, t_t_color, x_el, y_el, x_el_t, y_el_
        this.particles[i].behavior.radiusSquared = this.particles[i].behavior.radius * this.particles[i].behavior.radius;
      }
 
-    this.x_1 = Math.floor(this.particles[3].x);
-    this.y_1 = Math.floor(this.particles[3].y);
-    this.x_2 = Math.floor(this.particles[4].x);
-    this.y_2 = Math.floor(this.particles[4].y);
-    this.x_3 = Math.floor(this.particles[5].x);
-    this.y_3 = Math.floor(this.particles[5].y);
+    this.x_1 = Math.floor(this.particles[2].x);
+    this.y_1 = Math.floor(this.particles[2].y);
+    this.x_2 = Math.floor(this.particles[3].x);
+    this.y_2 = Math.floor(this.particles[3].y);
+    this.x_3 = Math.floor(this.particles[4].x);
+    this.y_3 = Math.floor(this.particles[4].y);
+    this.x_4 = Math.floor(this.particles[5].x);
+    this.y_4 = Math.floor(this.particles[5].y);
     //this.x_changed = [this.fourth_x, (this.fourth_x+this.fifth_x)/2, this.fifth_x, (this.fourth_x+this.fifth_x)*3/5, (this.fourth_x+this.fifth_x)*2/5];
     //this.y_changed = [this.fourth_y, (this.fourth_y+this.fifth_y)/2+10, this.fifth_y, (this.fourth_y+this.fifth_y)/2-40, (this.fourth_y+this.fifth_y)/2-40];
     if(l_or_r == "left"){
-      this.x_changed = [this.x_1, this.x_2+10, this.x_2-10, this.x_3-7];
-      this.y_changed = [this.y_1, this.y_2+10, this.y_2-10, this.y_3+40];
-      this.x_changed_t = [this.x_2-7, this.x_2-12, this.x_2+7];
-      this.y_changed_t = [this.y_2-7, this.y_2+15, this.y_2+7];
+      this.m_p_x = (this.x_2 + this.x_3)/2 - 15;
+      this.m_p_y = (this.y_2 + this.y_3)/2 - 15;
+      this.x_changed = [this.x_1+5, this.m_p_x-20, this.m_p_x+25, this.x_4-5];
+      this.y_changed = [this.y_1-10, this.m_p_y+10, this.m_p_y+40, this.y_4];
+      this.x_changed_t = [this.m_p_x-10, this.m_p_x-10, this.m_p_x+20];
+      this.y_changed_t = [this.m_p_y+10, this.m_p_y+40, this.m_p_y+33];
     }else if(l_or_r == "right"){
-      this.x_changed = [this.x_1, this.x_2-10, this.x_2+10, this.x_3+8];
-      this.y_changed = [this.y_1, this.y_2+10, this.y_2-10, this.y_3+40];
-      this.x_changed_t = [this.x_2+7, this.x_2+12, this.x_2-7];
-      this.y_changed_t = [this.y_2-7, this.y_2+15, this.y_2+7];
+      this.m_p_x = (this.x_2 + this.x_3)/2 + 15;
+      this.m_p_y = (this.y_2 + this.y_3)/2 - 15;
+      this.x_changed = [this.x_1-5, this.m_p_x+20, this.m_p_x-25, this.x_4+5];
+      this.y_changed = [this.y_1-10, this.m_p_y+10, this.m_p_y+40, this.y_4];
+      this.x_changed_t = [this.m_p_x+10, this.m_p_x+10, this.m_p_x-20];
+      this.y_changed_t = [this.m_p_y+10, this.m_p_y+40, this.m_p_y+33];
     }
     for( var i = 0; i < this.p_t.points.length; i++ ){
        this.p_t.points[i].x = this.x_changed[i];
