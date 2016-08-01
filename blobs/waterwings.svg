@@ -7,30 +7,18 @@
 </style>
 <g>
 	<circle class="st0" cx="22.9" cy="1.8" r="1.8"/>
-	<circle class="st0" cx="17.9" cy="7" r="1.4"/>
 	<circle class="st0" cx="12.2" cy="13.3" r="1.6"/>
-	<circle class="st0" cx="5.5" cy="20.9" r="1.4"/>
 	<circle class="st0" cx="2.1" cy="32.1" r="2.1"/>
-	<circle class="st0" cx="4.5" cy="38.8" r="2.4"/>
 	<circle class="st0" cx="13.1" cy="42.4" r="0.9"/>
-	<circle class="st0" cx="22.9" cy="44.2" r="1.8"/>
 	<circle class="st0" cx="34.1" cy="43.3" r="2.1"/>
-	<circle class="st0" cx="40.3" cy="37.8" r="1.4"/>
 	<circle class="st0" cx="43.5" cy="31.9" r="1.8"/>
-	<circle class="st0" cx="43.5" cy="25.3" r="1.8"/>
 </g>
 <g>
-	<circle class="st0" cx="22.5" cy="1.8" r="1.8"/>
-	<circle class="st0" cx="27.4" cy="7" r="1.4"/>
-	<circle class="st0" cx="33.2" cy="13.3" r="1.6"/>
-	<circle class="st0" cx="39.9" cy="20.9" r="1.4"/>
-	<circle class="st0" cx="43.3" cy="32.1" r="2.1"/>
-	<circle class="st0" cx="40.9" cy="38.8" r="2.4"/>
-	<circle class="st0" cx="32.3" cy="42.4" r="0.9"/>
-	<circle class="st0" cx="22.5" cy="44.2" r="1.8"/>
+	<circle class="st0" cx="22.4" cy="1.8" r="1.8"/>
+	<circle class="st0" cx="33.1" cy="13.3" r="1.6"/>
+	<circle class="st0" cx="43.2" cy="32.1" r="2.1"/>
+	<circle class="st0" cx="32.2" cy="42.4" r="0.9"/>
 	<circle class="st0" cx="11.2" cy="43.3" r="2.1"/>
-	<circle class="st0" cx="5" cy="37.8" r="1.4"/>
 	<circle class="st0" cx="1.8" cy="31.9" r="1.8"/>
-	<circle class="st0" cx="1.8" cy="25.3" r="1.8"/>
 </g>
 </svg>
