@@ -93,10 +93,10 @@
 			var temp_for_hasbeen = document.getElementsByClassName("hasbeen_id");
 			for (var i = 0; i < temp_for_hasbeen.length; i++) {
 				var span_for_hasbeen = document.createElement('span');
-				span_for_hasbeen.style = "width:50px;";
+				//span_for_hasbeen.style = "width:50px;";
 				var img_for_hasbeen = document.createElement('img');
 				img_for_hasbeen.src = "blobs/hasbeen_nipple.gif";
-				img_for_hasbeen.style = "width:50px;";
+				img_for_hasbeen.style = "max-width:100%; max-height:100%;"
 				span_for_hasbeen.appendChild(img_for_hasbeen);
 				temp_for_hasbeen[i].appendChild(span_for_hasbeen);
 			};
@@ -132,7 +132,7 @@
 				    change_to_this = "cranberry";
 				    cre_ele = document.createElement('span');
 				    cre_img = document.createElement('img');
-				    cre_img.style = "width:50px; height:50px;"
+				    cre_img.style = "max-width:100%; max-height:100%;"
 				    cre_img.src = "blobs/balloons_nipple.gif"
 				    
 				    cre_ele.appendChild(cre_img);
@@ -158,7 +158,7 @@
 				    change_to_this = "balloon";
 				    cre_ele = document.createElement('span');
 				    cre_img = document.createElement('img');
-				    cre_img.style = "width:50px; height:50px;"
+				    cre_img.style = "max-width:100%; max-height:100%;"
 				    cre_img.src = "blobs/cranberry_nipple.gif"
 				    cre_ele.appendChild(cre_img);
 				    break;
