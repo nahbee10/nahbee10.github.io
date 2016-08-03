@@ -60,9 +60,6 @@
 		</a> 
 		<a href="https://nahbee10.github.io/blobs/hasbeen.html" class="hasbeen_id tooltip">
 			has been
-			<span>
-				<img style="width:50px" src="blobs/hasbeen_nipple.gif" />
-			</span>
 		</a> 
 		<a href="https://nahbee10.github.io/blobs/peaches.html" id = "w2" class="tooltip">peach.</a>
 		<br>
@@ -97,7 +94,7 @@
 		<img src="blobs/clue2.gif" style="display:block; width:50px; margin-left:60px; margin-top:-100px;"/>
 	</div>
 	<script>
-		$(window).on("load", function() {
+		$(document).ready(function() {
 			shu_words();
 			var temp_for_hasbeen = document.getElementsByClassName("hasbeen_id");
 			for (var i = 0; i < temp_for_hasbeen.length; i++) {
@@ -109,23 +106,7 @@
 				span_for_hasbeen.appendChild(img_for_hasbeen);
 				temp_for_hasbeen[i].appendChild(span_for_hasbeen);
 			};
-			/*var msg = new SpeechSynthesisUtterance();
-			var voices = window.speechSynthesis.getVoices();
-			msg.voice = voices[2]; // Note: some voices don't support altering params
-			msg.voiceURI = 'native';
-			msg.volume = 1; // 0 to 1
-			msg.rate = 1; // 0.1 to 10
-			msg.pitch = 1; //0 to 2
-			msg.text = 'Cranberry has been sweetpotato. Watermelon has been bee sting. ';
-			msg.lang = 'en-US';
 
-			msg.onend = function(e) {
-			  console.log('Finished in ' + event.elapsedTime + ' seconds.');
-			};
-
-			speechSynthesis.speak(msg);
-			var msg = new SpeechSynthesisUtterance('Cranberry has been sweetpotato. Watermelon has been bee sting. ');
-			window.speechSynthesis.speak(msg);*/
 			setInterval(shu_words, 60000);
 		});
 		var a_ids = ["w1","w2","w3","w4","w5","w6","w7","w8","w9","w10","w11","w12","w13","w14"];
