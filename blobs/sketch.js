@@ -36,7 +36,8 @@ function setup() {
 
   frameRate(5); 
 
-  var w = 960, h = 720;
+  //var w = 960, h = 720;
+  var w = 96, h = 72;
 
   createCanvas(w, h);
 

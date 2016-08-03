@@ -86,7 +86,7 @@ function draw() {
 
   physics.update();
   
-  repeler.set(mouseX,mouseY);
+  repeler.set(mouseX-200,mouseY-200);
 
   first_class_blob.updateBlobs();
   first_class_blob2.updateBlobs();
