@@ -1,22 +1,66 @@
 <html>
 	<head>
+		<style>
+		a {
+			font-family: Times New Roman;
+		    font-weight: bold;
+		    font-size: 2em;
+		    color: white;
+		    -webkit-text-fill-color: #1c75bc;
+		    -webkit-text-stroke-width: 0.5px;
+		    -webkit-text-stroke-color: white;
+		    text-decoration: none;
+		    font-stretch: extra-condensed;
+		    line-height: 100px;
+		    padding-left: 5px;
+		    padding-right: 5px;
+
+		}
+
+		a.tooltip {outline:none; }
+		a.tooltip strong {line-height:30px;}
+		a.tooltip:hover {text-decoration:none;} 
+		a.tooltip span {
+		    z-index:10;display:none; padding:14px 20px;
+		    margin-top:60px; margin-left:-160px;
+		    width:50px; line-height:16px;
+		}
+		a.tooltip:hover span{
+		    display:inline; position:absolute; 
+		    border:2px solid #FFF;  color:#eb2739;
+		    background:#eb2739 url(cssttp/css-tooltip-gradient-bg.png) repeat-x 0 0;
+		}
+		.callout {z-index:20;position:absolute;border:0;top:-14px;left:120px;}
+		    
+		/*CSS3 extras*/
+		a.tooltip span
+		{
+		    border-radius:0px;        
+		    /*opacity: 0.8;*/
+		}
+
+		</style>
 	</head>
 
-	<body>
+	<body style="background: crimson">
 		<br>
-		<p style="font-size:64px; text-align:center;">Bebe out of blue.</p>
-		<p style="font-size:28px; text-align:right; padding-right:450px;">NAHEE KIM</p>
-<p style="font-size:28px; line-height:36px; text-align:left; padding-left:450px;">
-<mark style="background-color:#ffffff"><a href="#">Cranberry</a> <a href="https://nahbee10.github.io/blobs/hasbeen.html">has been</a> <a href="https://nahbee10.github.io/blobs/peaches.html">peach.</a></mark><br>
+		<!--<p style="font-size:64px; text-align:center;">Bebe out of blue.</p>
+		<p style="font-size:28px; text-align:right; padding-right:450px;">NAHEE KIM</p>-->
+<p style="font-size:28px; line-height:36px; text-align:center;">
+<a href="#" class="tooltip">Cranberry
+	<span>
+        <img src="blobs/cranberry_nipple.gif" style="width:50px;"/>
+    </span>
+</a> <a href="https://nahbee10.github.io/blobs/hasbeen.html">has been</a> <a href="https://nahbee10.github.io/blobs/peaches.html">peach.</a><br>
 <a href="#">Orange</a> <a href="https://nahbee10.github.io/blobs/hasbeen.html">has been</a> <a href="https://nahbee10.github.io/blobs/grapefruit.html">grape fruit.</a><br>
 <a href="https://nahbee10.github.io/blobs/lemons.html">Lemon</a> <a href="https://nahbee10.github.io/blobs/hasbeen.html">has been</a> <a href="https://nahbee10.github.io/blobs/waterwings.html">water wing.</a><br>
 <a href="https://nahbee10.github.io/blobs/cupcakes.html">Cup cake</a> <a href="https://nahbee10.github.io/blobs/hasbeen.html">has been</a> <a href="https://nahbee10.github.io/blobs/cucumbers.html">cucumber.</a><br>
 <a href="https://nahbee10.github.io/blobs/watermelons.html">Watermelon</a> <a href="https://nahbee10.github.io/blobs/hasbeen.html">has been</a> <a href="https://nahbee10.github.io/blobs/pointers.html">pointer.</a><br>
 <a href="#">Bee sting</a> <a href="https://nahbee10.github.io/blobs/hasbeen.html">has been</a> <a href="#">block buster.</a><br>
 <a href="https://nahbee10.github.io/blobs/coathooks.html">Coat hook</a> <a href="https://nahbee10.github.io/blobs/hasbeen.html">has been</a> <a href="https://nahbee10.github.io/blobs/underchinner.html">under chinner.</a><br>
-<a href="https://nahbee10.github.io/blobs/pears.html">Pear</a> <a href="https://nahbee10.github.io/blobs/hasbeen.html">has been</a> <a href="https://nahbee10.github.io/blobs/mailbags.html">mail bag.</a><br>
+<!--<a href="https://nahbee10.github.io/blobs/pears.html">Pear</a> <a href="https://nahbee10.github.io/blobs/hasbeen.html">has been</a> <a href="https://nahbee10.github.io/blobs/mailbags.html">mail bag.</a><br>
 <a href="https://nahbee10.github.io/blobs/hotwaterbottles.html">Hot water bottle</a> <a href="https://nahbee10.github.io/blobs/hasbeen.html">has been</a> <a href="https://nahbee10.github.io/blobs/flapjack.html">flap jack.</a><br>
-<a href="https://nahbee10.github.io/blobs/sweetpotatoes.html">Sweet potato</a> <a href="https://nahbee10.github.io/blobs/hasbeen.html">has been</a> <a href="https://nahbee10.github.io/blobs/balloons.html">balloon.</a><br>
+<a href="https://nahbee10.github.io/blobs/sweetpotatoes.html">Sweet potato</a> <a href="https://nahbee10.github.io/blobs/hasbeen.html">has been</a> <a href="https://nahbee10.github.io/blobs/balloons.html">balloon.</a><br>-->
 </p>
 	</body>
 </html>
