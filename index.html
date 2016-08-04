@@ -44,12 +44,26 @@
 			display:block !important;
 		}
 
+		#hori-center{
+		   padding: 0;
+		   margin: auto;
+		   display: block;
+		   width: 1280px;
+		   height: 680px;
+		   position: absolute;
+		   top: 0;
+		   bottom: 0;
+		   left: 0;
+		   right: 0;
+		}
+
 		</style>
 	</head>
 
 	<body style="background: crimson">
 		<!--<p style="font-size:64px; text-align:center;">Bebe out of blue.</p>
 		<p style="font-size:28px; text-align:right; padding-right:450px;">NAHEE KIM</p>-->
+		<div id="hori-center">
 		<p style="font-size:28px; line-height:36px; text-align:center;">
 		<a href="https://nahbee10.github.io/cranberries.html" id = "w1" class="tooltip" style="text-transform:capitalize">
 			Cranberry
@@ -89,9 +103,11 @@
 <a href="https://nahbee10.github.io/blobs/hotwaterbottles.html">Hot water bottle</a> <a href="https://nahbee10.github.io/blobs/hasbeen.html">has been</a> <a href="https://nahbee10.github.io/blobs/flapjack.html">flap jack.</a><br>
 <a href="https://nahbee10.github.io/blobs/sweetpotatoes.html">Sweet potato</a> <a href="https://nahbee10.github.io/blobs/hasbeen.html">has been</a> <a href="https://nahbee10.github.io/blobs/balloons.html">balloon.</a><br>-->
 	</p>
-	<div style="width:50px; height:50px;">
-		<img src="clue2.gif" style="display:block; width:50px; margin-left:60px; margin-top:-100px;"/>
+		<div style="width:50px; height:50px; z-index:100; margin-top:100px;">
+		<img src="clue2.gif" class="clue" style="width:50px; margin-left:60px; margin-bottom:1px;"/>
 	</div>
+	</div>
+
 	<script>
 		$(document).ready(function() {
 			shu_words();

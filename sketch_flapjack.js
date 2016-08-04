@@ -86,6 +86,7 @@ function draw() {
 
   physics.update();
   
+  console.log(mouseX+","+mouseY);
   //repeler.set(mouseX,mouseY);
   var x_rela = mouseX - $('#c').offset().left;
   var y_rela = mouseY - $('#c').offset().top;
