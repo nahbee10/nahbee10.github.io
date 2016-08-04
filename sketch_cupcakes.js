@@ -39,7 +39,7 @@ var magnif = 5;
 function setup() {
 
 
-  var w = 960, h = 640;
+  var w = 960, h = 320;
 
   createCanvas(w, h);
 
