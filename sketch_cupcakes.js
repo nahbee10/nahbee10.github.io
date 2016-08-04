@@ -85,9 +85,6 @@ function draw() {
 
   repeler.set(x_rela,y_rela);
 
-  console.log(mouseX+","+mouseY);
-  console.log(x_rela+","+y_rela);
-
   first_class_blob.updateBlobs();
   first_class_blob2.updateBlobs();
 
