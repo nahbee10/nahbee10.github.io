@@ -22,7 +22,7 @@ var y_el_t = [65.4, 75, 75, 65.4];
 function setup() {
 
 
-  var w = 640, h = 480;
+  var w = 960, h = 480;
 
   createCanvas(w, h);
 
