@@ -118,7 +118,7 @@ function Bblob(which_Degas, color, t_color, x_el, y_el, x_el_t, y_el_t, fir_att,
     this.p_t.closed = true;
 
 
-    //which_Degas.addChild(this.p);
+    which_Degas.addChild(this.p);
     which_Degas.addChild(this.p_t);
 
     this.pushParticles = function(){
