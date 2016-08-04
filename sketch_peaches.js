@@ -59,7 +59,7 @@ var dista = 360;
 function setup() {
 
 
-  var w = 640, h = 480;
+  var w = 750, h = 480;
 
   createCanvas(w, h);
 
