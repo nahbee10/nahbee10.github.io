@@ -40,7 +40,7 @@ function setup() {
 
 
   //var w = 960, h = 640;
-  var w = 640, h = 640;
+  var w = 600, h = 640;
   createCanvas(w, h);
 
   // Initialize the physics
