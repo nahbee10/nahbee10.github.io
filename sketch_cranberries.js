@@ -46,7 +46,7 @@ var dista = 250;
 function setup() {
 
 
-  var w = 960, h = 640;
+  var w = 500, h = 500;
 
   createCanvas(w, h);
 
@@ -86,7 +86,11 @@ function draw() {
 
   physics.update();
   
-  repeler.set(mouseX-200,mouseY-200);
+  //repeler.set(mouseX,mouseY);
+  var x_rela = mouseX - $('#c').offset().left;
+  var y_rela = mouseY - $('#c').offset().top;
+
+  repeler.set(x_rela,y_rela);
 
   first_class_blob.updateBlobs();
   first_class_blob2.updateBlobs();

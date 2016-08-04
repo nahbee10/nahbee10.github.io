@@ -254,7 +254,12 @@ function draw() {
   attractor.set(((width/4)*1),height/2);
   attractor2.set(((width/4)*3),height/2);
   
-  repeler.set(mouseX,mouseY);
+  //repeler.set(mouseX,mouseY);
+  var x_rela = mouseX - $('#c').offset().left;
+  var y_rela = mouseY - $('#c').offset().top;
+
+  repeler.set(x_rela,y_rela);
+
 
   for( var i = 0; i < particles.length; i++ ){
      p.points[i].x = particles[i].x;
