@@ -39,7 +39,7 @@ var magnif = 5;
 function setup() {
 
 
-  var w = 960, h = 320;
+  var w = 640, h = 320;
 
   createCanvas(w, h);
 
@@ -79,8 +79,14 @@ function draw() {
   background(55);
 
   physics.update();
-  
-  repeler.set(mouseX,mouseY);
+
+  var x_rela = mouseX - $('#c').offset().left;
+  var y_rela = mouseY - $('#c').offset().top;
+
+  repeler.set(x_rela,y_rela);
+
+  console.log(mouseX+","+mouseY);
+  console.log(x_rela+","+y_rela);
 
   first_class_blob.updateBlobs();
   first_class_blob2.updateBlobs();
