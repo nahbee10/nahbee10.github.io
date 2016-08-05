@@ -50,9 +50,19 @@ function setup() {
 
   d = new Degas( c );
 
-  baseColor = "#FFC3A0";
+  var colors_b = ["#f4d7c0", "#fcdcb6", "#e6bc98", "#512e23", "#d4aa78", "#a16e4b"];
+  var colors_b_t = ["#a37a62", "#bc7d77", "#a37a62","#331d17","#a37a62", "#7c514a"];
+  var colors_b_t_t = ["#895650","#965d59","#895650","#140b09","#895650","#603d3b"];
+
+  var c_index = getRandomInt(0,6);
+
+  baseColor = colors_b[c_index];
+  titColor = colors_b_t[c_index];
+  tit_titColor = colors_b_t_t[c_index];
+
+  /*baseColor = "#FFC3A0";
   titColor = "#c88979";
-  tit_titColor = "#8a494d";
+  tit_titColor = "#8a494d";*/
 
   p = new Degas.Path( pPoints );
   p.stroke = baseColor;
@@ -379,4 +389,8 @@ function draw() {
   fill(138,73,77);
   ellipse(width/2,height/2,40,40);*/
 
+}
+
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
 }

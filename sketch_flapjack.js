@@ -60,14 +60,22 @@ function setup() {
   
   d = new Degas(c);
 
+  var colors_b = ["#f4d7c0", "#fcdcb6", "#e6bc98", "#512e23", "#d4aa78", "#a16e4b"];
+  var colors_b_t = ["#a37a62", "#bc7d77", "#a37a62","#331d17","#a37a62", "#7c514a"];
+  var colors_b_t_t = ["#895650","#965d59","#895650","#140b09","#895650","#603d3b"];
+
+  var c_index = getRandomInt(0,6);
+
   var vec_att = new Vec2D(((x_el[0]/10+x_el[x_el.length - 1]*9/10)*magnif),(y_el[0]/10+y_el[x_el.length - 1]*9/10)*magnif + 40);
   var vec_att2 = new Vec2D(((x_el[0]*9/10+x_el[x_el.length - 1]/10)*magnif),(y_el[0]*9/10+y_el[x_el.length - 1]/10)*magnif + 40);
   console.log(Math.floor(x_el.length/2));
   console.log(vec_att2);
   var vec_att_next = new Vec2D(vec_att.x+350, vec_att.y);
   var vec_att2_next = new Vec2D(vec_att2.x+350, vec_att2.y);
-  first_class_blob = new Bblob(d,"#FFC3A0", "#8A494D", "#C88979", x_el, y_el, x_el_t, y_el_t, x_el_t_t, y_el_t_t, vec_att, vec_att2, 0);
-  first_class_blob2 = new Bblob(d,"#FFC3A0", "#8A494D", "#C88979", x_el, y_el, x_el_t, y_el_t, x_el_t_t, y_el_t_t, vec_att_next, vec_att2_next, 350);
+  //first_class_blob = new Bblob(d,"#FFC3A0", "#8A494D", "#C88979", x_el, y_el, x_el_t, y_el_t, x_el_t_t, y_el_t_t, vec_att, vec_att2, 0);
+  //first_class_blob2 = new Bblob(d,"#FFC3A0", "#8A494D", "#C88979", x_el, y_el, x_el_t, y_el_t, x_el_t_t, y_el_t_t, vec_att_next, vec_att2_next, 350);
+  first_class_blob = new Bblob(d,colors_b[c_index], colors_b_t_t[c_index], colors_b_t[c_index], x_el, y_el, x_el_t, y_el_t, x_el_t_t, y_el_t_t, vec_att, vec_att2, 0);
+  first_class_blob2 = new Bblob(d,colors_b[c_index], colors_b_t_t[c_index], colors_b_t[c_index], x_el, y_el, x_el_t, y_el_t, x_el_t_t, y_el_t_t, vec_att_next, vec_att2_next, 350);
 
   repeler = new Particle(new Vec2D(mouseX, mouseY), 100, 100, -7);
 
@@ -99,6 +107,10 @@ function draw() {
 
   d.render();
 
+}
+
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
 }
 
 function Bblob(which_Degas, color, t_color, t_t_color, x_el, y_el, x_el_t, y_el_t, x_el_t_t, y_el_t_t, fir_att, sec_att, x_cord) {
