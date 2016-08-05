@@ -36,7 +36,7 @@ function setup() {
 
   frameRate(5); 
 
-  var w = 960, h = 720;
+  var w = 1180, h = 720;
   //var w = 480, h = 360;
 
   createCanvas(w, h);
@@ -75,11 +75,32 @@ function setup() {
   p_tit_tit.fill = tit_titColor;
   p_tit_tit.smoothPointsNumber = 20;
   p_tit_tit.closed = true;
+
+  p2 = new Degas.Path( pPoints2 );
+  p2.stroke = baseColor;
+  p2.fill = baseColor;
+  p2.smoothPointsNumber = 20;
+  p2.closed = true;
+
+  p2_tit = new Degas.Path( pPoints_tit2 );
+  p2_tit.stroke = titColor;
+  p2_tit.fill = titColor;
+  p2_tit.smoothPointsNumber = 20;
+  p2_tit.closed = true;
+
+  p2_tit_tit = new Degas.Path( pPoints_tit_tit2 );
+  p2_tit_tit.stroke = tit_titColor;
+  p2_tit_tit.fill = tit_titColor;
+  p2_tit_tit.smoothPointsNumber = 20;
+  p2_tit_tit.closed = true;
   //p.smooth();
 
   d.addChild( p ); 
   d.addChild( p_tit ); 
   d.addChild( p_tit_tit );
+  d.addChild( p2 ); 
+  d.addChild( p2_tit ); 
+  d.addChild( p2_tit_tit );
 
   for (var i = 0; i < 50; i++) {
     var x = mainCircleRadius * Math.cos( Math.PI*2/50*i ) + (width*1)/4;
@@ -98,6 +119,25 @@ function setup() {
     var y = mainCircleRadius * Math.sin( Math.PI*2/25*i ) + height/2;
     particles_tit_tit.push(new Particle(new Vec2D(x, y), 4, 80, -8));
     pPoints_tit_tit.push( new Degas.Point( x, y ) );
+  }
+
+    for (var i = 0; i < 50; i++) {
+    var x = mainCircleRadius * Math.cos( Math.PI*2/50*i ) + (width*3)/4;
+    var y = mainCircleRadius * Math.sin( Math.PI*2/50*i ) + height/2;
+    particles2.push(new Particle(new Vec2D(x, y), 4, 80, -1));
+    pPoints2.push( new Degas.Point( x, y ) );
+  }
+  for (var i = 0; i < 25; i++) {
+    var x = mainCircleRadius * Math.cos( Math.PI*2/25*i ) + (width*3)/4;
+    var y = mainCircleRadius * Math.sin( Math.PI*2/25*i ) + height/2;
+    particles_tit2.push(new Particle(new Vec2D(x, y), 4, 80, -8));
+    pPoints_tit2.push( new Degas.Point( x, y ) );
+  }
+  for (var i = 0; i < 10; i++) {
+    var x = mainCircleRadius * Math.cos( Math.PI*2/25*i ) + (width*3)/4;
+    var y = mainCircleRadius * Math.sin( Math.PI*2/25*i ) + height/2;
+    particles_tit_tit2.push(new Particle(new Vec2D(x, y), 4, 80, -8));
+    pPoints_tit_tit2.push( new Degas.Point( x, y ) );
   }
   /*for (var i = 0; i < 25; i++) {
     particles_tit.push(new Particle(new Vec2D(random(width), random(height)), 4, 80, -8));
@@ -171,6 +211,58 @@ function setup() {
     }
 
   }
+
+    for (var i = 0; i < 50; i++) {
+    var spring1 = new VerletSpring2D(particles2[i], particles2[(i + 1) % particles2.length], 5, 0.01);
+    springs.push(spring1);
+    physics.addSpring(spring1);
+    if (i % 2 == 0) {
+      var spring2 = new VerletSpring2D(particles2[i], particles2[(i + 25) % particles2.length], 400, 0.001);
+      springs.push(spring2);
+      physics.addSpring(spring2);
+    }
+    if (i % 1 == 0) {
+      var spring2 = new VerletSpring2D(particles2[i], attractor2, 200, 0.001);
+      springs.push(spring2);
+      physics.addSpring(spring2);
+    }
+
+  }
+
+    for (var i = 0; i < 25; i++) {
+    var spring1 = new VerletSpring2D(particles_tit2[i], particles_tit2[(i + 1) % particles_tit2.length], 1, 0.01);
+    springs.push(spring1);
+    physics.addSpring(spring1);
+    if (i % 1 == 0) {
+      var spring2 = new VerletSpring2D(particles_tit2[i], particles_tit2[(i + 12) % particles_tit2.length], 400, 0.001);
+      springs.push(spring2);
+      physics.addSpring(spring2);
+    }
+    if (i % 1 == 0) {
+      var spring2 = new VerletSpring2D(particles_tit2[i], attractor2, 10, 0.01);
+      springs.push(spring2);
+      physics.addSpring(spring2);
+    }
+
+  }
+
+  for (var i = 0; i < 10; i++) {
+    var spring1 = new VerletSpring2D(particles_tit_tit2[i], particles_tit_tit2[(i + 1) % particles_tit_tit2.length], 1, 0.1);
+    springs.push(spring1);
+    physics.addSpring(spring1);
+    if (i % 1 == 0) {
+      var spring2 = new VerletSpring2D(particles_tit_tit2[i], particles_tit_tit2[(i + 4) % particles_tit_tit2.length], 400, 0.001);
+      springs.push(spring2);
+      physics.addSpring(spring2);
+    }
+    if (i % 1 == 0) {
+      var spring2 = new VerletSpring2D(particles_tit_tit2[i], attractor2, 1, 0.01);
+      springs.push(spring2);
+      physics.addSpring(spring2);
+    }
+
+  }
+
 
   /*
     for (var i = 0; i < 50; i++) {
@@ -370,9 +462,37 @@ function draw() {
      particles_tit_tit[i].behavior.radiusSquared = particles_tit_tit[i].behavior.radius * particles_tit_tit[i].behavior.radius;
    }
 
+     for( var i = 0; i < particles2.length; i++ ){
+     p2.points[i].x = particles2[i].x;
+     p2.points[i].y = particles2[i].y;
+
+     particles2[i].behavior.radius = 100 + 40 * sin(seconds + i / 30.0);
+     particles2[i].behavior.radiusSquared = particles2[i].behavior.radius * particles2[i].behavior.radius;
+   }
+
+     for( var i = 0; i < particles_tit2.length; i++ ){
+     p2_tit.points[i].x = particles_tit2[i].x;
+     p2_tit.points[i].y = particles_tit2[i].y;
+
+     particles_tit2[i].behavior.radius = 10 + 1 * sin(seconds + i / 30.0);
+     particles_tit2[i].behavior.radiusSquared = particles_tit2[i].behavior.radius * particles_tit2[i].behavior.radius;
+   }
+
+     for( var i = 0; i < particles_tit_tit2.length; i++ ){
+     p2_tit_tit.points[i].x = particles_tit_tit2[i].x;
+     p2_tit_tit.points[i].y = particles_tit_tit2[i].y;
+
+     particles_tit_tit2[i].behavior.radius = 10 + 1 * sin(seconds + i / 30.0);
+     particles_tit_tit2[i].behavior.radiusSquared = particles_tit_tit2[i].behavior.radius * particles_tit_tit2[i].behavior.radius;
+   }
+
   p.smooth();
   p_tit.smooth();
   p_tit_tit.smooth();
+
+  p2.smooth();
+  p2_tit.smooth();
+  p2_tit_tit.smooth();
 
 
   d.render();
