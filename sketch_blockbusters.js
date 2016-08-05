@@ -110,19 +110,19 @@ function setup() {
 
   for (var i = 0; i < 60; i++) {
     var x = mainCircleRadius * Math.cos( Math.PI*2/60*i ) + (width*1)/4;
-    var y = mainCircleRadius * Math.sin( Math.PI*2/60*i ) + height/2;
+    var y = mainCircleRadius * Math.sin( Math.PI*2/60*i ) + height/2 +30 ;
     particles.push(new Particle(new Vec2D(x, y), 4, 80, -1));
     pPoints.push( new Degas.Point( x, y ) );
   }
   for (var i = 0; i < 25; i++) {
     var x = mainCircleRadius * Math.cos( Math.PI*2/25*i ) + (width*1)/4;
-    var y = mainCircleRadius * Math.sin( Math.PI*2/25*i ) + height/2;
+    var y = mainCircleRadius * Math.sin( Math.PI*2/25*i ) + height/2 +30;
     particles_tit.push(new Particle(new Vec2D(x, y), 4, 80, -8));
     pPoints_tit.push( new Degas.Point( x, y ) );
   }
   for (var i = 0; i < 10; i++) {
     var x = mainCircleRadius * Math.cos( Math.PI*2/25*i ) + (width*1)/4;
-    var y = mainCircleRadius * Math.sin( Math.PI*2/25*i ) + height/2;
+    var y = mainCircleRadius * Math.sin( Math.PI*2/25*i ) + height/2 +30;
     particles_tit_tit.push(new Particle(new Vec2D(x, y), 4, 80, -8));
     pPoints_tit_tit.push( new Degas.Point( x, y ) );
   }
@@ -135,19 +135,19 @@ function setup() {
 
   for (var i = 0; i < 60; i++) {
     var x = mainCircleRadius * Math.cos( Math.PI*2/60*i ) + (width*3)/4;
-    var y = mainCircleRadius * Math.sin( Math.PI*2/60*i ) + height/2;
+    var y = mainCircleRadius * Math.sin( Math.PI*2/60*i ) + height/2 +30;
     particles2.push(new Particle(new Vec2D(x, y), 4, 80, -1));
     pPoints2.push( new Degas.Point( x, y ) );
   }
   for (var i = 0; i < 25; i++) {
     var x = mainCircleRadius * Math.cos( Math.PI*2/25*i ) + (width*3)/4;
-    var y = mainCircleRadius * Math.sin( Math.PI*2/25*i ) + height/2;
+    var y = mainCircleRadius * Math.sin( Math.PI*2/25*i ) + height/2 +30;
     particles_tit2.push(new Particle(new Vec2D(x, y), 4, 80, -8));
     pPoints_tit2.push( new Degas.Point( x, y ) );
   }
   for (var i = 0; i < 10; i++) {
     var x = mainCircleRadius * Math.cos( Math.PI*2/25*i ) + (width*3)/4;
-    var y = mainCircleRadius * Math.sin( Math.PI*2/25*i ) + height/2;
+    var y = mainCircleRadius * Math.sin( Math.PI*2/25*i ) + height/2 +30;
     particles_tit_tit2.push(new Particle(new Vec2D(x, y), 4, 80, -8));
     pPoints_tit_tit2.push( new Degas.Point( x, y ) );
   }
@@ -162,8 +162,8 @@ function setup() {
     particles_tit_tit2.push(new Particle(new Vec2D(random(width), random(height)), 4, 80, -8));
   }*/
 
-  attractor = new Particle(new Vec2D(((width/4)*1),height/2), 75, width * 10, 0.1);
-  attractor2 = new Particle(new Vec2D(((width/4)*3),height/2), 80, width * 10, 0.1);
+  attractor = new Particle(new Vec2D(((width/4)*1),height/2+30), 75, width * 10, 0.1);
+  attractor2 = new Particle(new Vec2D(((width/4)*3),height/2+30), 80, width * 10, 0.1);
   repeler = new Particle(new Vec2D(mouseX, mouseY), 100, 50, -4);
   //attractor.lock();
 
@@ -287,8 +287,8 @@ function draw() {
 
   //attractor.display();
 
-  attractor.set(((width/4)*1)+20,height/2);
-  attractor2.set(((width/4)*3)-20,height/2);
+  attractor.set(((width/4)*1)+20,height/2+30);
+  attractor2.set(((width/4)*3)-20,height/2+30);
   
   //repeler.set(mouseX,mouseY);
   var x_rela = mouseX - $('#c').offset().left;
