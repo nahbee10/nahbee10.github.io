@@ -48,13 +48,63 @@
 		   padding: 0;
 		   margin: auto;
 		   display: block;
-		   width: 1280px;
+		   width: 1200px;
 		   height: 680px;
 		   position: absolute;
 		   top: -20;
 		   bottom: 0;
 		   left: 0;
 		   right: 0;
+		}
+
+		.clue{
+			width:50px; 
+			height:50px; 
+			position:absolute; 
+			z-index:100; 
+			/*margin-top:100px;*/
+		    margin: 5% auto; /* 15% from the top and centered */
+		    padding: 20px;
+		    border: 0px solid #888;
+		    width: 80%; /* Could be more or less, depending on screen size */
+		}
+
+				/* The Modal (background) */
+		.modal {
+		    display: none; /* Hidden by default */
+		    position: fixed; /* Stay in place */
+		    z-index: 1; /* Sit on top */
+		    left: 0;
+		    top: 0;
+		    width: 100%; /* Full width */
+		    height: 100%; /* Full height */
+		    overflow: auto; /* Enable scroll if needed */
+		    background-color: rgb(0,0,0); /* Fallback color */
+		    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+		}
+
+		/* Modal Content/Box */
+		.modal-content {
+		    background-color: transparent;
+		    margin: 15% auto; /* 15% from the top and centered */
+		    padding: 20px;
+		    border: 0px solid #888;
+		    width: 80%; /* Could be more or less, depending on screen size */
+		}
+
+		/* The Close Button */
+		.close {
+		    color: #aaa;
+		    float: right;
+		    font-size: 28px;
+		    font-weight: bold;
+		}
+
+		.close:hover,
+		.close:focus {
+		    color: black;
+		    text-decoration: none;
+		    cursor: pointer;
 		}
 
 		</style>
@@ -64,6 +114,23 @@
 		<!--<p style="font-size:64px; text-align:center;">Bebe out of blue.</p>
 		<p style="font-size:28px; text-align:right; padding-right:450px;">NAHEE KIM</p>-->
 		<div id="hori-center">
+					<!-- Trigger/Open The Modal -->
+	<div style="" class="clue">
+		<!--<img src="clue2.gif" class="clue" style="width:50px; margin-left:60px; margin-bottom:1px;"/>-->
+		<input type="image"  id="myBtn" style="width:50px; " src="clue2.gif" alt="Show boobs" />
+	</div>
+	<!--margin-left:60px; margin-top:-100px;-->
+	<!--<button id="myBtn" style="z-index:100">Open Modal</button>-->
+
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
+
+	  <!-- Modal content -->
+	  <div class="modal-content">
+	    <img src="boobinsulting_screenshot.png" style="width:50%;"/>
+	  </div>
+
+	</div>
 		<p style="font-size:28px; line-height:36px; text-align:center;">
 		<a href="https://nahbee10.github.io/cranberries.html" id = "w1" class="tooltip" style="text-transform:capitalize">
 			Cranberry
@@ -103,12 +170,43 @@
 <a href="https://nahbee10.github.io/blobs/hotwaterbottles.html">Hot water bottle</a> <a href="https://nahbee10.github.io/blobs/hasbeen.html">has been</a> <a href="https://nahbee10.github.io/blobs/flapjack.html">flap jack.</a><br>
 <a href="https://nahbee10.github.io/blobs/sweetpotatoes.html">Sweet potato</a> <a href="https://nahbee10.github.io/blobs/hasbeen.html">has been</a> <a href="https://nahbee10.github.io/blobs/balloons.html">balloon.</a><br>-->
 	</p>
-	</div>
-	<div style="width:50px; height:50px; z-index:100; margin-top:100px;">
-		<img src="clue2.gif" class="clue" style="width:50px; margin-left:60px; margin-bottom:1px;"/>
+
 	</div>
 
+
+
 	<script>
+
+
+					// Get the modal
+		var modal = document.getElementById('myModal');
+
+		// Get the button that opens the modal
+		var btn = document.getElementById("myBtn");
+
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+
+		// When the user clicks on the button, open the modal 
+		btn.onclick = function() {
+		    modal.style.display = "block";
+		}
+
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function() {
+		    modal.style.display = "none";
+		}
+
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+		    if (event.target == modal) {
+		        modal.style.display = "none";
+		    }
+		}
+	</script>
+
+	<script>
+
 		$(document).ready(function() {
 			shu_words();
 			var temp_for_hasbeen = document.getElementsByClassName("hasbeen_id");
@@ -123,6 +221,7 @@
 
 			setInterval(shu_words, 60000);
 		});
+
 		var a_ids = ["w1","w2","w3","w4","w5","w6","w7","w8","w9","w10","w11","w12","w13","w14"];
 		var b_names = ["cranberries.html","lemons.html","grapefruit.html","cucumbers.html","cupcakes.html","balloons.html","flapjack.html","hotwaterbottles.html","pointers.html","pears.html","peaches.html","mailbags.html","sweetpotatoes.html","underchinner.html","watermelons.html","waterwings.html","cranberries.html","lemons.html","grapefruit.html"];
 		function shu_words(){
