@@ -101,11 +101,11 @@ function setup() {
   p_tit_tit2.closed = true;
   //p.smooth();
 
-  d.addChild( p ); 
-  d.addChild( p2 ); 
-  d.addChild( p_tit ); 
+  //d.addChild( p ); 
+  //d.addChild( p2 ); 
+  //d.addChild( p_tit ); 
   d.addChild( p_tit_tit ); 
-  d.addChild( p_tit2 ); 
+  //d.addChild( p_tit2 ); 
   d.addChild( p_tit_tit2 ); 
 
   for (var i = 0; i < 60; i++) {
