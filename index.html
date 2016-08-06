@@ -1,7 +1,19 @@
 <html>
 	<head>
+		<title>Boobblobs.com</title>
+	    <!-- You can use Open Graph tags to customize link previews.
+	    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
+		<meta property="og:url"           content="http://www.boobblobs.com" />
+		<meta property="og:type"          content="website" />
+		<meta property="og:title"         content="Boobblobs.com" />
+		<meta property="og:description"   content="Are you ready to explore the world of cyber-boobs?" />
+		<meta property="og:image"         content="for_og_tag.png" />
+
+		<link rel="shortcut icon" type="image/png" href="boobicon.png"/>
+
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<style>
+
 		a {
 			font-family: Times New Roman;
 		    font-weight: bold;
@@ -96,7 +108,7 @@
 		    top: 0;
 		    width: 100%; /* Full width */
 		    height: 100%; /* Full height */
-		    overflow: auto; /* Enable scroll if needed */
+		    overflow: auto; /* auto - Enable scroll if needed */
 		    background-color: rgb(0,0,0); /* Fallback color */
 		    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 		}
@@ -133,13 +145,13 @@
 				/* The Modal (background) */
 		.modal2 {
 		    display: none; /* Hidden by default */
-		    position: fixed; /* Stay in place */
+		    position: fixed; /*Stay in place */
 		    z-index: 1; /* Sit on top */
 		    left: 0;
 		    top: 0;
 		    width: 100%; /* Full width */
 		    height: 100%; /* Full height */
-		    overflow: auto; /* Enable scroll if needed */
+		    overflow: hidden; /* Enable scroll if needed */
 		    background-color: rgb(0,0,0); /* Fallback color */
 		    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 		}
@@ -147,10 +159,12 @@
 		/* Modal Content/Box */
 		.modal2-content {
 		    background-color: transparent;
-		    margin: 15% auto; /* 15% from the top and centered */
+		    margin: 5% auto; /* 15% from the top and centered */
 		    padding: 0px;
 		    border: 0px solid #888;
-		    width: 40%; /* Could be more or less, depending on screen size */
+		    width: 35%; /* Could be more or less, depending on screen size */
+		    height: 99%;
+		    overflow: initial;
 		}
 
 		/* The Close Button */
@@ -267,7 +281,21 @@
 	  <!-- Modal content -->
 	  <div class="modal2-content">
 	    <span class="close2">x</span>
+	    <span style="text-align:center;"><p style="text-align:center; color:white;">made by <a href="http://www.nah.ee" style="		    -webkit-text-fill-color: white;
+		    -webkit-text-stroke-width: 0px;
+		    -webkit-text-stroke-color: white; font-weight: bold;
+		    font-size: 1em; line-height: 10px; text-decoration:underline;">naheekim</a></p></span>
 	    <img src="sticker_size2.png" id="window_info" /><br>
+	    <a href="https://www.facebook.com/sharer/sharer.php?u=www.boobblobs.com" style="float:left;" target="_blank">
+		<img src="fb_boob.png" style="width:100px;" /></a>
+		</a>
+		
+	    <a class="twitter-share-button"
+		  href="https://twitter.com/intent/tweet?text=Hello%20world"
+		  data-size="large"
+		  style="float:right;">
+		<img src="twt_boob.png" style="width:100px;" /></a>
+		
 	    <!--<p style="text-align:center; font-size:28px; color: #fff;">By Nahee Kim <a href="http://www.nah.ee/" style="font-size:28px; color: #fff;">(nah.ee)</a></p>-->
 	  </div>
 
@@ -365,7 +393,7 @@
 		// When the user clicks on <span> (x), close the modal
 		span2.onclick = function() {
 		    modal2.style.display = "none";
-		    btn.style.display = "inherit";
+		    btn.style.display = "block";
 		    btn2.style.display = "inherit";
 		}
 
@@ -375,9 +403,11 @@
 		    if (event.target == modal) {
 		        modal.style.display = "none";
 		        btn.style.display = "inherit";
+		        btn2.style.display = "inherit";
 		    }else if (event.target == modal2) {
 		        modal2.style.display = "none";
 		        btn2.style.display = "inherit";
+		        btn.style.display = "inherit";
 		    }
 		}
 	</script>
