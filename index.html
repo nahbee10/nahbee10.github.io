@@ -107,7 +107,7 @@
 		    margin: 15% auto; /* 15% from the top and centered */
 		    padding: 20px;
 		    border: 0px solid #888;
-		    width: 80%; /* Could be more or less, depending on screen size */
+		    width: 50%; /* Could be more or less, depending on screen size */
 		}
 
 		/* The Close Button */
@@ -115,7 +115,6 @@
 		    color: #fff;
 		    float: left;
 		    margin-top: -5%;
-		    margin-left: 25%;
 		    font-size: 42px;
 		    font-weight: bold;
 		}
@@ -151,7 +150,7 @@
 		    margin: 15% auto; /* 15% from the top and centered */
 		    padding: 0px;
 		    border: 0px solid #888;
-		    width: 80%; /* Could be more or less, depending on screen size */
+		    width: 40%; /* Could be more or less, depending on screen size */
 		}
 
 		/* The Close Button */
@@ -172,11 +171,11 @@
 		}
 
 		#window_boob{
-			width:50%;
+			width:100%;
 		}
 
 		#window_info{
-			width:50%;
+			width:100%;
 		}
 
 		@media (max-width: 1100px) {
@@ -336,11 +335,15 @@
 		// When the user clicks on the button, open the modal 
 		btn.onclick = function() {
 		    modal.style.display = "block";
+		    btn.style.display = "none";
+		    btn2.style.display = "none";
 		}
 
 		// When the user clicks on <span> (x), close the modal
 		span.onclick = function() {
 		    modal.style.display = "none";
+		    btn.style.display = "inherit";
+		    btn2.style.display = "inherit";
 		}
 
 		// Get the modal
@@ -355,11 +358,15 @@
 		// When the user clicks on the button, open the modal 
 		btn2.onclick = function() {
 		    modal2.style.display = "block";
+		    btn.style.display = "none";
+		    btn2.style.display = "none";
 		}
 
 		// When the user clicks on <span> (x), close the modal
 		span2.onclick = function() {
 		    modal2.style.display = "none";
+		    btn.style.display = "inherit";
+		    btn2.style.display = "inherit";
 		}
 
 
@@ -367,8 +374,10 @@
 		window.onclick = function(event) {
 		    if (event.target == modal) {
 		        modal.style.display = "none";
+		        btn.style.display = "inherit";
 		    }else if (event.target == modal2) {
 		        modal2.style.display = "none";
+		        btn2.style.display = "inherit";
 		    }
 		}
 	</script>
