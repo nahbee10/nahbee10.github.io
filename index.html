@@ -162,7 +162,7 @@
 		    margin: 5% auto; /* 15% from the top and centered */
 		    padding: 0px;
 		    border: 0px solid #888;
-		    width: 35%; /* Could be more or less, depending on screen size */
+		    width: 30%; /* Could be more or less, depending on screen size */
 		    height: 99%;
 		    overflow: initial;
 		}
@@ -198,6 +198,12 @@
 
 		#icon_twt{
 			width: 100px;
+		}
+
+		#for_me{
+			text-align:center; 
+			color:white;
+			font-size: 36px;
 		}
 
 		@media (max-width: 1100px) {
@@ -259,13 +265,27 @@
 		    width: 80%; /* Could be more or less, depending on screen size */
 		    height: 99%;
 		    overflow: initial;
-			}		
+			}	
+
+			.close2 {
+			    color: #fff;
+			    float: left;
+			    margin-top: -5%;
+			    margin-left: 25%;
+			    font-size: 72px;
+			    font-weight: bold;
+			}	
 			#icon_fb{
 				width: 200px;
 			}
 
 			#icon_twt{
 				width: 200px;
+			}
+
+			#for_me{
+				font-size: 42px;
+
 			}
 
 		}
@@ -307,10 +327,10 @@
 	  <!-- Modal content -->
 	  <div class="modal2-content">
 	    <span class="close2">x</span>
-	    <span style="text-align:center;"><p style="text-align:center; color:white;">made by <a href="http://www.nah.ee" style="		    -webkit-text-fill-color: white;
+	    <span style="text-align:center;"><p id="for_me">made by <a href="http://www.nah.ee" style="		    -webkit-text-fill-color: white;
 		    -webkit-text-stroke-width: 0px;
 		    -webkit-text-stroke-color: white; font-weight: bold;
-		    font-size: 1em; line-height: 10px; text-decoration:underline;">naheekim</a></p></span>
+		    font-size: 1em; line-height: 10px; text-decoration:underline;" target="_blank">naheekim</a></p></span>
 	    <img src="sticker_size2.png" id="window_info" /><br>
 	    <a href="https://www.facebook.com/sharer/sharer.php?u=www.boobblobs.com" style="float:left;" target="_blank">
 		<img src="fb_boob.png" id= "icon_fb" /></a>
