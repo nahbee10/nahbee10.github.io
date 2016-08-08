@@ -206,7 +206,31 @@
 			font-size: 36px;
 		}
 
+		div.ct {
+		    height: 6em;
+		    position: relative;
+		    margin-left: auto;
+		    margin-right: auto;
+		    width: 6em;
+		}
+		div.ct p {
+		    margin: 0;
+		    color: white;
+		    position: absolute;
+		    top: 50%;
+		    left: 50%;
+		    /*margin-right: -50%;*/
+		    transform: translate(-50%, -50%);
+
+		}
+
 		@media (max-width: 1100px) {
+
+			a.tooltip:hover span{
+			    display:none; position:absolute; 
+			    border:2px solid #FFF;  color:#eb2739;
+			    background:#eb2739 url(cssttp/css-tooltip-gradient-bg.png) repeat-x 0 0;
+			}
 			#hori-center{
 			   padding: 0;
 			   margin: auto;
@@ -255,6 +279,14 @@
 			    margin: 0 50% auto;
 			    font-size: 64px;
 			    font-weight: bold;
+			}
+
+			.modal-content {
+			    background-color: transparent;
+			    margin: 15% auto; /* 15% from the top and centered */
+			    padding: 20px;
+			    border: 0px solid #888;
+			    width: 80%; /* Could be more or less, depending on screen size */
 			}
 
 			.modal2-content {
@@ -327,21 +359,30 @@
 	  <!-- Modal content -->
 	  <div class="modal2-content">
 	    <span class="close2">x</span>
-	    <span style="text-align:center;"><p id="for_me">made by <a href="http://www.nah.ee" style="		    -webkit-text-fill-color: white;
+
+	    <span style="text-align:center;">
+	    	<p id="for_me">made by <a href="http://www.nah.ee" style="		    -webkit-text-fill-color: white;
 		    -webkit-text-stroke-width: 0px;
 		    -webkit-text-stroke-color: white; font-weight: bold;
-		    font-size: 1em; line-height: 10px; text-decoration:underline;" target="_blank">naheekim</a></p></span>
-	    <img src="sticker_size2.png" id="window_info" /><br>
+		    font-size: 1em; line-height: 10px; text-decoration:underline;" target="_blank">naheekim</a>
+		    <a href="https://www.instagram.com/naheejouy/" style="line-height: 8px;"><img src="insta_white.png" style="width:20px;" /></a>
+			</p>
+
+		</span>
+	    <img src="sticker_size2.png" id="window_info" /><br> 
 	    <a href="https://www.facebook.com/sharer/sharer.php?u=www.boobblobs.com" style="float:left;" target="_blank">
-		<img src="fb_boob.png" id= "icon_fb" /></a>
+			<img src="fb_boob.png" id= "icon_fb" />
 		</a>
-		
 	    <a class="twitter-share-button"
 		  href="https://twitter.com/intent/tweet?text=http://www.boobblobs.com/%20%20%20So%20funny"
 		  data-size="large"
-		  style="float:right;">
-		<img src="twt_boob.png" id ="icon_twt" /></a>
-		
+		  style="float:right; z-index:100">
+			<img src="twt_boob.png" id ="icon_twt" />
+		</a>
+	    <div class="ct">
+	    	<p style="text-align:center; font-size:42px;">Share</p>
+	    </div>
+
 	    <!--<p style="text-align:center; font-size:28px; color: #fff;">By Nahee Kim <a href="http://www.nah.ee/" style="font-size:28px; color: #fff;">(nah.ee)</a></p>-->
 	  </div>
 
