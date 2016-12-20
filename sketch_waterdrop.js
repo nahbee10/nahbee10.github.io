@@ -8,13 +8,14 @@
 var x_el = [];
 var y_el = [];
 var dots = document.getElementsByClassName('st0');
+console.log(dots);
 for(var i = 0; i<dots.length; i++){
   //console.log(pearDots.getAttributeNS(null, 'cx'));
   var dot = dots[i];
   var dot_value = dot.getAttributeNS(null, 'cx');
   x_el.push(dot_value);
   dot_value = dot.getAttributeNS(null, 'cy');
-  y_el.push(dot_value);
+  y_el.push(dot_value-250);
 } 
 
 console.log(x_el);
@@ -30,10 +31,10 @@ var repeler;
 var first_class_blob;
 var first_class_blob2;
 
-var x_el_t = [x_el[4],(x_el[4]+x_el[5])/2,x_el[5]];
-var y_el_t = [y_el[4],((y_el[4]+y_el[5])/2)+20,y_el[5]];
+var x_el_t = [x_el[1],(x_el[1]+x_el[7])/2,x_el[7]];
+var y_el_t = [y_el[1],((y_el[1]+y_el[7])/2)-100,y_el[7]];
 
-var magnif = 5;
+var magnif = 8;
 
 
 function setup() {
@@ -60,19 +61,19 @@ function setup() {
 
   var c_index = getRandomInt(0,6);
 
-  var vec_att = new Vec2D(((x_el[0]/10+x_el[x_el.length - 1]*9/10)*magnif+30),(y_el[0]/10+y_el[x_el.length - 1]*9/10)*magnif + 100);
-  var vec_att2 = new Vec2D(((x_el[0]*9/10+x_el[x_el.length - 1]/10)*magnif-30),(y_el[0]*9/10+y_el[x_el.length - 1]/10)*magnif + 100);
-  var vec_att_next = new Vec2D(vec_att.x+250, vec_att.y);
-  var vec_att2_next = new Vec2D(vec_att2.x+250, vec_att2.y);
+  var vec_att = new Vec2D(((x_el[1]/10+x_el[7]*9/10)*magnif+30),(y_el[1]/10+y_el[x_el.length - 2]*9/10)*magnif + 100);
+  var vec_att2 = new Vec2D(((x_el[1]*9/10+x_el[x_el.length - 2]/10)*magnif-30),(y_el[1]*9/10+y_el[x_el.length - 2]/10)*magnif + 100);
+  /*var vec_att_next = new Vec2D(vec_att.x+250, vec_att.y);
+  var vec_att2_next = new Vec2D(vec_att2.x+250, vec_att2.y);*/
   first_class_blob = new Bblob(d,colors_b[c_index], colors_b_t_t[c_index], x_el, y_el, x_el_t, y_el_t, vec_att, vec_att2, 0);
-  first_class_blob2 = new Bblob(d,colors_b[c_index], colors_b_t_t[c_index], x_el, y_el, x_el_t, y_el_t, vec_att_next, vec_att2_next, 250);
+  //first_class_blob2 = new Bblob(d,colors_b[c_index], colors_b_t_t[c_index], x_el, y_el, x_el_t, y_el_t, vec_att_next, vec_att2_next, 250);
 
   repeler = new Particle(new Vec2D(mouseX, mouseY), 100, 100, -7);
 
   first_class_blob.pushParticles();
-  first_class_blob2.pushParticles();
+  //first_class_blob2.pushParticles();
   first_class_blob.addSp();
-  first_class_blob2.addSp();
+  //first_class_blob2.addSp();
 
 
 }
@@ -91,9 +92,11 @@ function draw() {
   repeler.set(x_rela,y_rela);
 
   first_class_blob.updateBlobs();
-  first_class_blob2.updateBlobs();
+  //first_class_blob2.updateBlobs();
 
   d.render();
+
+  ellipse(x_el_t)
 
 }
 
@@ -106,7 +109,7 @@ function Bblob(which_Degas, color, t_color, x_el, y_el, x_el_t, y_el_t, fir_att,
   this.attractor = new Particle(fir_att, 50, 50, 5);
   this.attractor2 = new Particle(sec_att, 50, 50, 5);
   this.pPoints = [];
-  this.pPoints_t = [];
+  //this.pPoints_t = [];
 
     this.baseColor = color;
     this.titColor = t_color;
@@ -117,15 +120,15 @@ function Bblob(which_Degas, color, t_color, x_el, y_el, x_el_t, y_el_t, fir_att,
     this.p.smoothPointsNumber = 20;
     this.p.closed = true;
 
-    this.p_t = new Degas.Path(this.pPoints_t);
+    /*this.p_t = new Degas.Path(this.pPoints_t);
     this.p_t.stroke = this.titColor;
     this.p_t.fill = this.titColor;
     this.p_t.smoothPointsNumber = 20;
-    this.p_t.closed = true;
+    this.p_t.closed = true;*/
 
 
     which_Degas.addChild(this.p);
-    which_Degas.addChild(this.p_t);
+    //which_Degas.addChild(this.p_t);
 
     this.pushParticles = function(){
       for (var i = 0; i < x_el.length; i++) {
@@ -135,11 +138,11 @@ function Bblob(which_Degas, color, t_color, x_el, y_el, x_el_t, y_el_t, fir_att,
         this.pPoints.push( new Degas.Point( this.x, this.y ) );
       }
 
-      for (var i = 0; i < x_el_t.length; i++) {
+      /*for (var i = 0; i < x_el_t.length; i++) {
         this.x = x_el_t[i]*magnif+x_cord;
         this.y = y_el_t[i]*magnif;
         this.pPoints_t.push( new Degas.Point( this.x, this.y ) );
-      }
+      }*/
     }
 
     this.addSp = function(){
@@ -176,7 +179,7 @@ function Bblob(which_Degas, color, t_color, x_el, y_el, x_el_t, y_el_t, fir_att,
        this.particles[i].behavior.radius = 100 + 40 * sin(this.seconds + i / 3.0);
        this.particles[i].behavior.radiusSquared = this.particles[i].behavior.radius * this.particles[i].behavior.radius;
      }
-    this.fourth_x = Math.floor(this.particles[4].x);
+    /*this.fourth_x = Math.floor(this.particles[4].x);
     this.fourth_y = Math.floor(this.particles[4].y);
     this.fifth_x = Math.floor(this.particles[5].x);
     this.fifth_y = Math.floor(this.particles[5].y);
@@ -187,10 +190,10 @@ function Bblob(which_Degas, color, t_color, x_el, y_el, x_el_t, y_el_t, fir_att,
     for( var i = 0; i < this.p_t.points.length; i++ ){
        this.p_t.points[i].x = this.x_changed[i];
        this.p_t.points[i].y = this.y_changed[i];
-     }
+     }*/
 
     this.p.smooth();
-    this.p_t.smooth();
+    //this.p_t.smooth();
 
     
   }
